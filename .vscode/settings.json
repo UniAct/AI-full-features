@@ -1,0 +1,10 @@
+{
+    "python.languageServer": "Pylance",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python-envs.pythonProjects": [],
+    "chat.tools.terminal.autoApprove": {
+        "true": true,
+        ".venv/bin/python": true
+    }
+}

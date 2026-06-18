@@ -1,0 +1,35 @@
+[project]
+name = "uniact-rag-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.129.2",
+    "uvicorn==0.41.0",
+    "python-multipart==0.0.22",
+    "python-dotenv==1.2.1",
+    "pydantic-settings==2.13.1",
+    "aiofiles==25.1.0",
+    "langchain==1.2.10",
+    "pymupdf==1.27.1",
+    "langchain_community==0.4.1",
+    "motor==3.7.1",
+    "openai==2.21.0",
+    "cohere==5.20.6",
+    "qdrant-client==1.9.1",
+    "SQLAlchemy==2.0.46",
+    "asyncpg==0.31.0",
+    "alembic==1.18.4",
+    "psycopg2-binary==2.9.11",
+    "pgvector==0.4.2",
+    "nltk==3.9.3",
+    "prometheus-client==0.24.1",
+    "starlette-exporter==0.23.0",
+    "fastapi-health==0.4.0",
+    "docling[easyocr]>=2.95.0",
+    "ragas>=0.2.0",
+    "langchain-openai",
+    "rapidfuzz>=3.14.5",
+]
+

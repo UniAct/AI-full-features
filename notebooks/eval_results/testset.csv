@@ -1,0 +1,2195 @@
+user_input,reference,reference_contexts
+What types of data sources are covered in the provided learning material?,"The learning material covers working with data from CSV, JSON, SQL, databases, cloud storage, and other sources.","explains the solution and provides meaningful context.
+Go beyond theory and concepts by learning the nuts and
+bolts you need to construct working machine learning
+applications. You’ll find recipes for:
+•	 Vectors, matrices, and arrays
+•	 Working with data from CSV, JSON, SQL, databases,
+cloud storage, and other sources
+
+xii
+Preface O’Reilly Online Learning
+For more than 40 years, O’Reilly Media has provided technol‐
+ogy and business training, knowledge, and insight to help
+companies succeed.
+Our unique network of experts and innovators share their knowledge and expertise
+through books, articles, and our online learning platform. O’Reilly’s online learning
+
+input on various chapters and being unwillingly coaxed into sudden brainstorming
+sessions that shaped the new content added to this edition. I’d also like to thank the
+technical reviewers—Jigyasa Grover, Matteus Tanha, and Ganesh Harke—along with
+the O’Reilly editors: Jeff Bleiel, Nicole Butterfield, and Clare Laylock. That being said,
+
+13.0 Introduction                                                                                                           231
+13.1 Fitting a Line                                                                                                          231
+13.2 Handling Interactive Effects                                                                                233
+
+8.0 Introduction                                                                                                             133
+8.1 Loading Images                                                                                                        133
+8.2 Saving Images                                                                                                           136"
+How long has O'Reilly Media been providing technology and business training?,"O'Reilly Media has provided technology and business training, knowledge, and insight to help companies succeed for more than 40 years.","explains the solution and provides meaningful context.
+Go beyond theory and concepts by learning the nuts and
+bolts you need to construct working machine learning
+applications. You’ll find recipes for:
+•	 Vectors, matrices, and arrays
+•	 Working with data from CSV, JSON, SQL, databases,
+cloud storage, and other sources
+
+xii
+Preface O’Reilly Online Learning
+For more than 40 years, O’Reilly Media has provided technol‐
+ogy and business training, knowledge, and insight to help
+companies succeed.
+Our unique network of experts and innovators share their knowledge and expertise
+through books, articles, and our online learning platform. O’Reilly’s online learning
+
+input on various chapters and being unwillingly coaxed into sudden brainstorming
+sessions that shaped the new content added to this edition. I’d also like to thank the
+technical reviewers—Jigyasa Grover, Matteus Tanha, and Ganesh Harke—along with
+the O’Reilly editors: Jeff Bleiel, Nicole Butterfield, and Clare Laylock. That being said,
+
+13.0 Introduction                                                                                                           231
+13.1 Fitting a Line                                                                                                          231
+13.2 Handling Interactive Effects                                                                                233
+
+8.0 Introduction                                                                                                             133
+8.1 Loading Images                                                                                                        133
+8.2 Saving Images                                                                                                           136"
+When was the second edition of the book released?,"The second edition of the book was released in July 2023, with the first release on 2023-07-27.","Preface
+xiii Of course, the machine learning space also evolves rapidly, and the updates included
+in this second edition could not have been written without the thoughtful feedback
+of my peers. I’d specifically like to thank my fellow Etsy coworkers Andrea Heyman,
+Maria Gomez, Alek Maelstrum, and Brian Schmidt for acquiescing to requests for
+
+own risk. If any code samples or other technology this work contains or describes is subject to open
+source licenses or the intellectual property rights of others, it is your responsibility to ensure that your use
+thereof complies with such licenses and/or rights. Table of Contents
+Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  xi
+
+the number of people who’ve helped me and this book get to the place it’s at (in one
+way or another) is massive. I’d love to thank everyone who’s been a part of my ML
+journey in one way or another and helped make this book what it is. Love y’all.
+xiv
+Preface CHAPTER 1
+Working with Vectors, Matrices,
+
+Proofreader: Piper Editorial Consulting, LLC
+Indexer: Potomac Indexing, LLC
+Interior Designer: David Futato
+Cover Designer: Karen Montgomery
+Illustrator: Kate Dullea
+April 2018:
+First Edition
+July 2023:
+Second Edition
+Revision History for the Second Edition
+2023-07-27: First Release
+See http://oreilly.com/catalog/errata.csp?isbn=9781098135720 for release details.
+
+talk more about NLP and this library in Chapter 22, but this example serves as a
+high-level introduction to the power of using pretrained classifiers in your machine
+learning pipelines to generate features, classify text, or analyze unstructured data.
+See Also
+• Hugging Face Transformers Quick Tour"
+"What is the purpose of using pretrained classifiers in machine learning pipelines, as introduced in the preface?","The purpose of using pretrained classifiers in machine learning pipelines is to generate features, classify text, or analyze unstructured data, as introduced in the preface, with more details to be discussed in Chapter 22.","Preface
+xiii Of course, the machine learning space also evolves rapidly, and the updates included
+in this second edition could not have been written without the thoughtful feedback
+of my peers. I’d specifically like to thank my fellow Etsy coworkers Andrea Heyman,
+Maria Gomez, Alek Maelstrum, and Brian Schmidt for acquiescing to requests for
+
+own risk. If any code samples or other technology this work contains or describes is subject to open
+source licenses or the intellectual property rights of others, it is your responsibility to ensure that your use
+thereof complies with such licenses and/or rights. Table of Contents
+Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  xi
+
+the number of people who’ve helped me and this book get to the place it’s at (in one
+way or another) is massive. I’d love to thank everyone who’s been a part of my ML
+journey in one way or another and helped make this book what it is. Love y’all.
+xiv
+Preface CHAPTER 1
+Working with Vectors, Matrices,
+
+Proofreader: Piper Editorial Consulting, LLC
+Indexer: Potomac Indexing, LLC
+Interior Designer: David Futato
+Cover Designer: Karen Montgomery
+Illustrator: Kate Dullea
+April 2018:
+First Edition
+July 2023:
+Second Edition
+Revision History for the Second Edition
+2023-07-27: First Release
+See http://oreilly.com/catalog/errata.csp?isbn=9781098135720 for release details.
+
+talk more about NLP and this library in Chapter 22, but this example serves as a
+high-level introduction to the power of using pretrained classifiers in your machine
+learning pipelines to generate features, classify text, or analyze unstructured data.
+See Also
+• Hugging Face Transformers Quick Tour"
+What are the two preprocessing steps contained in the preprocess object?,The two preprocessing steps contained in the preprocess object are StandardScaler and principal component analysis (PCA).,"ues (StandardScaler) and principal component analysis (PCA). This object is
+called preprocess and contains both of our preprocessing steps. We then include
+preprocess in a pipeline with our learning algorithm. The result is that this allows
+us to outsource the proper (and confusing) handling of fitting, transforming, and
+
+10.5 Recursively Eliminating Features                                                                        184
+11. Model Evaluation. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  187
+11.0 Introduction                                                                                                           187
+
+training history visualization, 342-345
+tuning hyperparameters for, 355-357
+unstructured data, 361-371
+visualizing, 358
+weight regularization to reduce overfitting,
+345-347
+neuron, in neural network, 325
+NLP (natural language processing), 95, 103,
+119, 120
+NLTK (Natural Language Toolkit), 108-110
+NMF (nonnegative matrix factorization),
+
+19.0 Introduction
+In much of this book we have looked at supervised machine learning—where we have
+access to both the features and the target. This is, unfortunately, not always the case.
+Frequently, we run into situations where we only know the features. For example,
+imagine we have records of sales from a grocery store and we want to break up sales
+
+model evaluation, 187-215
+baseline classification model, 193-194
+baseline regression model, 191-192
+binary classifier predictions, 194-197
+binary classifier thresholds, 197-200
+classifier performance visualization,
+202-204
+cluster models, 206-207
+cross-validating models, 187-191
+custom evaluation metric, 208-209"
+"What type of machine learning is discussed in much of the book, where access to both features and the target is available?","The type of machine learning discussed in much of the book is supervised machine learning, where access to both features and the target is available.","ues (StandardScaler) and principal component analysis (PCA). This object is
+called preprocess and contains both of our preprocessing steps. We then include
+preprocess in a pipeline with our learning algorithm. The result is that this allows
+us to outsource the proper (and confusing) handling of fitting, transforming, and
+
+10.5 Recursively Eliminating Features                                                                        184
+11. Model Evaluation. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  187
+11.0 Introduction                                                                                                           187
+
+training history visualization, 342-345
+tuning hyperparameters for, 355-357
+unstructured data, 361-371
+visualizing, 358
+weight regularization to reduce overfitting,
+345-347
+neuron, in neural network, 325
+NLP (natural language processing), 95, 103,
+119, 120
+NLTK (Natural Language Toolkit), 108-110
+NMF (nonnegative matrix factorization),
+
+19.0 Introduction
+In much of this book we have looked at supervised machine learning—where we have
+access to both the features and the target. This is, unfortunately, not always the case.
+Frequently, we run into situations where we only know the features. For example,
+imagine we have records of sales from a grocery store and we want to break up sales
+
+model evaluation, 187-215
+baseline classification model, 193-194
+baseline regression model, 191-192
+binary classifier predictions, 194-197
+binary classifier thresholds, 197-200
+classifier performance visualization,
+202-204
+cluster models, 206-207
+cross-validating models, 187-191
+custom evaluation metric, 208-209"
+What is the purpose of the chi-square (χ²) statistic in the context of this book?,"The chi-square (χ²) statistic is used for feature selection, as mentioned on page 182 and 183.","ordinal features, 92-94
+chi-square (χ²) statistic, feature selection, 182,
+183
+classes
+imputing missing values, 96-98
+maximizing separability, reducing features,
+170-172
+classification and classifiers
+baseline classification model, 193-194
+binary classifiers, 194-200, 275-276, 333-335
+description of performance, 211-212
+
+Acknowledgments
+The second edition of this book is clearly only possible because of the fantastic
+content, structure, and quality laid out in the first edition by the original author,
+Chris Albon. As the first author of the second edition, I cannot understate the degree
+to which this made my job way, way easier.
+
+continuous features, 296-298
+discrete and count features, 298-299
+named-entity recognition, 112
+natural language processing (NLP), 95, 103,
+119, 120
+Natural Language Toolkit (NLTK), 108-110
+ndim attribute, 7
+NearestNeighbors, 263-266
+nested cross-validation after model selection,
+229
+neural networks, 325-357
+
+1.20 Generating Random Values                                                                                   19
+iii 2. Loading Data. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  21
+2.0 Introduction                                                                                                               21
+
+185 Discussion
+This is likely the most advanced recipe in this book up to this point, combining a
+number of topics we have yet to address in detail. However, the intuition is straight‐
+forward enough that we can address it here rather than holding off until a later
+chapter. The idea behind RFE is to train a model repeatedly, updating the weights or"
+Why was the second edition of this book easier to create for the first author?,"The second edition of this book was easier to create because of the fantastic content, structure, and quality laid out in the first edition by the original author, Chris Albon.","ordinal features, 92-94
+chi-square (χ²) statistic, feature selection, 182,
+183
+classes
+imputing missing values, 96-98
+maximizing separability, reducing features,
+170-172
+classification and classifiers
+baseline classification model, 193-194
+binary classifiers, 194-200, 275-276, 333-335
+description of performance, 211-212
+
+Acknowledgments
+The second edition of this book is clearly only possible because of the fantastic
+content, structure, and quality laid out in the first edition by the original author,
+Chris Albon. As the first author of the second edition, I cannot understate the degree
+to which this made my job way, way easier.
+
+continuous features, 296-298
+discrete and count features, 298-299
+named-entity recognition, 112
+natural language processing (NLP), 95, 103,
+119, 120
+Natural Language Toolkit (NLTK), 108-110
+ndim attribute, 7
+NearestNeighbors, 263-266
+nested cross-validation after model selection,
+229
+neural networks, 325-357
+
+1.20 Generating Random Values                                                                                   19
+iii 2. Loading Data. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  21
+2.0 Introduction                                                                                                               21
+
+185 Discussion
+This is likely the most advanced recipe in this book up to this point, combining a
+number of topics we have yet to address in detail. However, the intuition is straight‐
+forward enough that we can address it here rather than holding off until a later
+chapter. The idea behind RFE is to train a model repeatedly, updating the weights or"
+"What typographical convention is used in the book to indicate new terms, URLs, email addresses, filenames, and file extensions?",The typographical convention used is Italic.,"unstructured data, 361-371
+image classification training, 362-364,
+367-369
+loading, 34
+text classification, 364-366, 369
+unsupervised learning models, 206-207, 303
+(see also clustering)
+upsampling, imbalanced class problem, 100
+validation data, 188
+validation_curve, 213
+value_counts method, 49
+var method, 9
+
+boasting over 200 self-contained solutions (copy, paste, and run) for the most com‐
+mon tasks a data scientist or machine learning engineer building a model will run
+into.
+Conventions Used in This Book
+The following typographical conventions are used in this book:
+Italic
+Indicates new terms, URLs, email addresses, filenames, and file extensions.
+
+84-85
+finding nearest neighbors, 263-266
+grouping using clustering, 83-84
+normalizing, 72-74
+one-hot encoding, 90-92, 337
+one-vs-rest (OvR) logistic regression, 277
+OOB (out-of-bag) observations, 251
+open function, 34
+OpenCV (Open Source Computer Vision
+Library), 133-135, 161-163
+operations, applying to elements, 318
+
+corner detection, 151-153
+cropping, 137
+edge detection, 149-150
+encoding color histograms as features,
+156-159
+loading, 133-135
+object detection, 161-163
+pretrained embeddings as features, 159-160
+resizing, 136-137
+saving, 136
+sharpening, 141
+imbalanced classes, handling
+accuracy paradox with, 195
+categorical data, 98-101
+
+pooling layer, 364
+posterior, naive Bayes, 296
+preallocating arrays, 4
+precision metric, 195, 201
+predictions and predicting
+binary classification evaluation of, 194-197
+binary classifier thresholds, 197-200
+cross-validating models, 187-191
+hyperparameter value effects, 213-215
+imputing missing class values, 96-98"
+How is the issue of imbalanced classes handled in the context of categorical data?,"The issue of imbalanced classes is handled in the context of categorical data by discussing accuracy paradox with imbalanced classes, and the text covers this topic on pages 98-101.","unstructured data, 361-371
+image classification training, 362-364,
+367-369
+loading, 34
+text classification, 364-366, 369
+unsupervised learning models, 206-207, 303
+(see also clustering)
+upsampling, imbalanced class problem, 100
+validation data, 188
+validation_curve, 213
+value_counts method, 49
+var method, 9
+
+boasting over 200 self-contained solutions (copy, paste, and run) for the most com‐
+mon tasks a data scientist or machine learning engineer building a model will run
+into.
+Conventions Used in This Book
+The following typographical conventions are used in this book:
+Italic
+Indicates new terms, URLs, email addresses, filenames, and file extensions.
+
+84-85
+finding nearest neighbors, 263-266
+grouping using clustering, 83-84
+normalizing, 72-74
+one-hot encoding, 90-92, 337
+one-vs-rest (OvR) logistic regression, 277
+OOB (out-of-bag) observations, 251
+open function, 34
+OpenCV (Open Source Computer Vision
+Library), 133-135, 161-163
+operations, applying to elements, 318
+
+corner detection, 151-153
+cropping, 137
+edge detection, 149-150
+encoding color histograms as features,
+156-159
+loading, 133-135
+object detection, 161-163
+pretrained embeddings as features, 159-160
+resizing, 136-137
+saving, 136
+sharpening, 141
+imbalanced classes, handling
+accuracy paradox with, 195
+categorical data, 98-101
+
+pooling layer, 364
+posterior, naive Bayes, 296
+preallocating arrays, 4
+precision metric, 195, 201
+predictions and predicting
+binary classification evaluation of, 194-197
+binary classifier thresholds, 197-200
+cross-validating models, 187-191
+hyperparameter value effects, 213-215
+imputing missing class values, 96-98"
+What technique is used to determine the importance of words in a document?,"Weighting word importance is used to determine the importance of words in a document, and techniques such as tf-idf vectors can be used to implement this, as seen in the sections on term frequency-inverse document frequency and weighting word importance.","removing stop words, 108-109
+sentiment analysis classifier, 119
+stemming words, 109
+tagging parts of speech, 110-112
+tf-idf vectors to implement, 118-119
+tokenizing, 107-110
+weighting word importance, 116-117
+text classification
+fine-tuning pretrained model, 369-371
+neural networks for, 364-366
+tf-idf (see term frequency-inverse document
+
+tensors (see PyTorch)
+term frequency (tf), 117
+term frequency-inverse document frequency
+(tf-idf), 116-119
+test set, 188-190
+text, 103-120
+cleaning, 103-105
+encoding as bag of words, 113-115
+evaluation metrics report, 211-212
+named-entity recognition, 112
+parsing and cleaning HTML, 106
+removing punctuation, 106
+
+of learning. The following are a few examples (though this is not a comprehensive
+list):
+• Text or image classification (example: classifying whether or not an image is a
+picture of a hotdog)
+• Transfer learning (example: using a pretrained contextual model like BERT and
+fine-tuning it on a task to predict whether or not an email is spam)
+
+cover some commonly used techniques; knowledge of these will add valuable tools
+to our preprocessing toolbox. In addition to many generic text processing recipes,
+we’ll also demonstrate how you can import and leverage some pretrained machine
+learning models to generate richer text features.
+6.1 Cleaning Text
+
+support vector machines, 283-286
+text classification, 364-366, 369-371
+training decision tree classifiers, 243-245
+visualizing classifier performance, 202-204
+classification_report, 211
+classifier__[hyperparameter name] format, 223
+class_weight method, 292
+cleaning text, 103-105
+clustering, 303-311"
+"How can a pretrained model be utilized for a specific task, such as predicting whether an email is spam?","A pretrained model can be utilized for a specific task through transfer learning, where the model is fine-tuned on the task, as seen in the example of using a pretrained contextual model like BERT and fine-tuning it to predict whether an email is spam.","removing stop words, 108-109
+sentiment analysis classifier, 119
+stemming words, 109
+tagging parts of speech, 110-112
+tf-idf vectors to implement, 118-119
+tokenizing, 107-110
+weighting word importance, 116-117
+text classification
+fine-tuning pretrained model, 369-371
+neural networks for, 364-366
+tf-idf (see term frequency-inverse document
+
+tensors (see PyTorch)
+term frequency (tf), 117
+term frequency-inverse document frequency
+(tf-idf), 116-119
+test set, 188-190
+text, 103-120
+cleaning, 103-105
+encoding as bag of words, 113-115
+evaluation metrics report, 211-212
+named-entity recognition, 112
+parsing and cleaning HTML, 106
+removing punctuation, 106
+
+of learning. The following are a few examples (though this is not a comprehensive
+list):
+• Text or image classification (example: classifying whether or not an image is a
+picture of a hotdog)
+• Transfer learning (example: using a pretrained contextual model like BERT and
+fine-tuning it on a task to predict whether or not an email is spam)
+
+cover some commonly used techniques; knowledge of these will add valuable tools
+to our preprocessing toolbox. In addition to many generic text processing recipes,
+we’ll also demonstrate how you can import and leverage some pretrained machine
+learning models to generate richer text features.
+6.1 Cleaning Text
+
+support vector machines, 283-286
+text classification, 364-366, 369-371
+training decision tree classifiers, 243-245
+visualizing classifier performance, 202-204
+classification_report, 211
+classifier__[hyperparameter name] format, 223
+class_weight method, 292
+cleaning text, 103-105
+clustering, 303-311"
+What is the purpose of finding the hyperplane in support vector machines?,"The purpose of finding the hyperplane in support vector machines is to maximize the margin between the classes in the training data, effectively separating the two classes.","hyperparameters, 217
+(see also model selection)
+for neural networks, 355-357
+versus parameters, 217
+regularization penalty, 219, 278
+value effects visualization, 213-215
+hyperplanes, 283, 284-285
+identity matrix, 19
+idf (inverse of document frequency), 117
+IID (independent and identically distributed)
+
+concept into n dimensions.
+Support vector machines classify data by finding the hyperplane that maximizes the
+margin between the classes in the training data. In a two-dimensional example with
+two classes, we can think of a hyperplane as the widest straight “band” (i.e., line with
+margins) that separates the two classes.
+
+linear regression, 231-241
+multiclass classifier evaluation of, 201-202
+naive Bayes predicted probabilities, 300-301
+neural networks, 340-342
+SVC predicted probabilities, 289-291
+XGBoost model, 260
+predict_proba method, 199, 267, 278, 301
+preprocessing data
+model selection, 224-226
+neural networks, 328-329
+
+autograd, 326-327
+binary classifier training, 333-335
+designing, 329-333
+dropout for reducing overfitting, 350-352
+early stopping for reducing overfitting,
+347-349
+multiclass classifier training, 336-338
+predicting, 340-342
+preprocessing data for, 328-329
+regressor training, 338-340
+Index
+393 saving model training progress, 352-354
+
+approach has two major weaknesses. First, the performance of the model can be
+highly dependent on which few observations were selected for the test set. Second,
+the model is not being trained using all the available data, and it’s not being evaluated
+on all the available data.
+A better strategy, which overcomes these weaknesses, is called k-fold cross-validation"
+What are the two major weaknesses of a model evaluation approach that is not using k-fold cross-validation?,"The two major weaknesses are that the model's performance can be highly dependent on the few observations selected for the test set, and the model is not being trained or evaluated on all the available data.","hyperparameters, 217
+(see also model selection)
+for neural networks, 355-357
+versus parameters, 217
+regularization penalty, 219, 278
+value effects visualization, 213-215
+hyperplanes, 283, 284-285
+identity matrix, 19
+idf (inverse of document frequency), 117
+IID (independent and identically distributed)
+
+concept into n dimensions.
+Support vector machines classify data by finding the hyperplane that maximizes the
+margin between the classes in the training data. In a two-dimensional example with
+two classes, we can think of a hyperplane as the widest straight “band” (i.e., line with
+margins) that separates the two classes.
+
+linear regression, 231-241
+multiclass classifier evaluation of, 201-202
+naive Bayes predicted probabilities, 300-301
+neural networks, 340-342
+SVC predicted probabilities, 289-291
+XGBoost model, 260
+predict_proba method, 199, 267, 278, 301
+preprocessing data
+model selection, 224-226
+neural networks, 328-329
+
+autograd, 326-327
+binary classifier training, 333-335
+designing, 329-333
+dropout for reducing overfitting, 350-352
+early stopping for reducing overfitting,
+347-349
+multiclass classifier training, 336-338
+predicting, 340-342
+preprocessing data for, 328-329
+regressor training, 338-340
+Index
+393 saving model training progress, 352-354
+
+approach has two major weaknesses. First, the performance of the model can be
+highly dependent on which few observations were selected for the test set. Second,
+the model is not being trained using all the available data, and it’s not being evaluated
+on all the available data.
+A better strategy, which overcomes these weaknesses, is called k-fold cross-validation"
+What method does IVF use to partition the search space into distinct areas?,IVF uses Voronoi tessellations to partition the search space into a number of distinct areas or clusters.,"approach works by using clustering to limit the scope of the search space for our
+nearest neighbors search. IVF uses Voronoi tessellations to partition our search space
+into a number of distinct areas (or clusters). And when we go to find nearest neigh‐
+bors, we visit a limited number of clusters to find similar observations, as opposed to
+
+methods use trial and error to find the subset of features that produces models with
+the highest quality predictions. Wrapper methods are often the most effective, as they
+find the best result through actual experimentation as opposed to naive assumptions.
+Finally, embedded methods select the best feature subset as part of, as an extension of,
+
+with multiple learning algorithms, 222-224
+parallelization to speed up, 226-227
+performance evaluation after selection,
+229-230
+in preprocessing, 224-226
+randomized search method, 220-222
+moving time windows, 129
+MSE (mean squared error), 204-206, 245, 340
+mT method, 321
+multiclass classifiers, 201-202, 277, 336-338
+
+Our best strategy is simply to collect more observations—especially observations
+from the minority class. However, often this is just not possible, so we have to resort
+to other options.
+A second strategy is to use a model evaluation metric better suited to imbalanced
+classes. Accuracy is often used as a metric for evaluating the performance of a model,
+
+a learning algorithm’s training process.
+Ideally, we’d describe all three methods in this chapter. However, since embedded
+methods are closely intertwined with specific learning algorithms, they are difficult
+to explain prior to a deeper dive into the algorithms themselves. Therefore, in this
+chapter we cover only filter and wrapper feature selection methods, leaving the"
+"Why is collecting more observations, especially from the minority class, considered the best strategy?","Collecting more observations, especially from the minority class, is considered the best strategy because it can help improve the performance of a model, although it is not always possible to do so.","approach works by using clustering to limit the scope of the search space for our
+nearest neighbors search. IVF uses Voronoi tessellations to partition our search space
+into a number of distinct areas (or clusters). And when we go to find nearest neigh‐
+bors, we visit a limited number of clusters to find similar observations, as opposed to
+
+methods use trial and error to find the subset of features that produces models with
+the highest quality predictions. Wrapper methods are often the most effective, as they
+find the best result through actual experimentation as opposed to naive assumptions.
+Finally, embedded methods select the best feature subset as part of, as an extension of,
+
+with multiple learning algorithms, 222-224
+parallelization to speed up, 226-227
+performance evaluation after selection,
+229-230
+in preprocessing, 224-226
+randomized search method, 220-222
+moving time windows, 129
+MSE (mean squared error), 204-206, 245, 340
+mT method, 321
+multiclass classifiers, 201-202, 277, 336-338
+
+Our best strategy is simply to collect more observations—especially observations
+from the minority class. However, often this is just not possible, so we have to resort
+to other options.
+A second strategy is to use a model evaluation metric better suited to imbalanced
+classes. Accuracy is often used as a metric for evaluating the performance of a model,
+
+a learning algorithm’s training process.
+Ideally, we’d describe all three methods in this chapter. However, since embedded
+methods are closely intertwined with specific learning algorithms, they are difficult
+to explain prior to a deeper dive into the algorithms themselves. Therefore, in this
+chapter we cover only filter and wrapper feature selection methods, leaving the"
+What should be considered when deciding how to handle outliers in a dataset?,"When deciding how to handle outliers, it should be based on two aspects: what makes them outliers and the end goal in mind for the data. If the outliers are believed to be errors, such as from a broken sensor or a miscoded value, then they might be dropped or replaced with NaN. However, if the outliers are believed to be legitimate data points, they should be handled accordingly to achieve the desired goal.","accuracy metric, 194-195, 201, 213-215
+activation functions, neural network, 331,
+336-338, 340
+AdaBoostClassifier, 258-260
+AdaBoostRegressor, 258-260
+adaptive thresholding, 145-147
+add method, 16
+agg method, 59-60
+agglomerative clustering, 310
+algorithm-specific methods, speeding up model
+selection, 228
+
+So what should we do if we have outliers? Think about why they are outliers, have an
+end goal in mind for the data, and, most importantly, remember that not making a
+decision to address outliers is itself a decision with implications.
+One additional point: if you do have outliers, standardization might not be appropri‐
+
+•	 Handling numerical and categorical data, text, images,
+and dates and times
+•	 Dimensionality reduction using feature extraction
+or feature selection
+•	 Model evaluation and selection
+•	 Linear and logical regression, trees and forests,
+and k-nearest neighbors
+•	 Supporting vector machines (SVM), naïve Bayes,
+
+we handle them should be based on two aspects. First, we should consider what
+makes them outliers. If we believe they are errors in the data, such as from a broken
+sensor or a miscoded value, then we might drop the observation or replace outlier
+values with NaN since we can’t trust those values. However, if we believe the outliers
+
+data, we are not achieving our desired goal. Our goal is not to evaluate how well the
+model does on our training data, but how well it does on data it has never seen before
+(e.g., a new customer, a new crime, a new image). For this reason, our method of
+evaluation should help us understand how well models are able to make predictions"
+What is the primary goal of model evaluation in machine learning?,"The primary goal of model evaluation is not to evaluate how well the model does on the training data, but how well it does on data it has never seen before, such as a new customer, a new crime, or a new image. The method of evaluation should help understand how well models are able to make predictions on unseen data.","accuracy metric, 194-195, 201, 213-215
+activation functions, neural network, 331,
+336-338, 340
+AdaBoostClassifier, 258-260
+AdaBoostRegressor, 258-260
+adaptive thresholding, 145-147
+add method, 16
+agg method, 59-60
+agglomerative clustering, 310
+algorithm-specific methods, speeding up model
+selection, 228
+
+So what should we do if we have outliers? Think about why they are outliers, have an
+end goal in mind for the data, and, most importantly, remember that not making a
+decision to address outliers is itself a decision with implications.
+One additional point: if you do have outliers, standardization might not be appropri‐
+
+•	 Handling numerical and categorical data, text, images,
+and dates and times
+•	 Dimensionality reduction using feature extraction
+or feature selection
+•	 Model evaluation and selection
+•	 Linear and logical regression, trees and forests,
+and k-nearest neighbors
+•	 Supporting vector machines (SVM), naïve Bayes,
+
+we handle them should be based on two aspects. First, we should consider what
+makes them outliers. If we believe they are errors in the data, such as from a broken
+sensor or a miscoded value, then we might drop the observation or replace outlier
+values with NaN since we can’t trust those values. However, if we believe the outliers
+
+data, we are not achieving our desired goal. Our goal is not to evaluate how well the
+model does on our training data, but how well it does on data it has never seen before
+(e.g., a new customer, a new crime, a new image). For this reason, our method of
+evaluation should help us understand how well models are able to make predictions"
+What does the F1 metric represent in the context of model evaluation?,"The F1 metric represents a balance between the recall and precision, where the relative contributions of recall and precision are considered. This balance is used to evaluate the performance of a model, providing a more nuanced assessment than accuracy alone.","which, if done well, allows us to predict the class of observations even without a
+target vector. There are many clustering algorithms, and they have a wide variety of
+approaches to identifying the clusters in data. In this chapter, we will cover a selection
+of clustering algorithms using scikit-learn and how to use them in practice.
+
+parametric, supervised methods for both classification and regression. The basis of
+tree-based learners is the decision tree, wherein a series of decision rules (e.g., “If a
+person’s credit score is greater than 720…”) are chained. The result looks vaguely like
+an upside-down tree, with the first decision rule at the top and subsequent decision
+
+likelihood, naive Bayes, 296
+limit method, 132
+linear discriminant analysis (LDA), 170-172
+linear regression, 231-241
+fitting a line, 231-233
+fitting nonlinear relationship, 235-237
+interactive effects, handling, 233-235
+lasso regression to reduce features, 240
+regularization to reduce variance, 237-239
+
+Discussion
+As an evaluation metric, accuracy has some valuable properties, especially its intui‐
+tiveness. However, better metrics often involve using some balance of precision and
+recall—that is, a trade-off between the optimism and pessimism of our model. F1 rep‐
+196
+Chapter 11: Model Evaluation resents a balance between the recall and precision, where the relative contributions of
+
+analogy might be the best approach. Imagine a very foggy football field (i.e., a two-
+dimensional feature space) with 100 people standing on it (i.e., our observations).
+Because it is foggy, a person can see only a short distance. Every minute each person
+looks around and takes a step in the direction of the most people they can see. As"
+How do individuals move in the analogy of the foggy football field?,"In the analogy, each person looks around and takes a step in the direction of the most people they can see. This movement is repeated every minute, with each person adjusting their position based on their limited visibility of the surrounding area.","which, if done well, allows us to predict the class of observations even without a
+target vector. There are many clustering algorithms, and they have a wide variety of
+approaches to identifying the clusters in data. In this chapter, we will cover a selection
+of clustering algorithms using scikit-learn and how to use them in practice.
+
+parametric, supervised methods for both classification and regression. The basis of
+tree-based learners is the decision tree, wherein a series of decision rules (e.g., “If a
+person’s credit score is greater than 720…”) are chained. The result looks vaguely like
+an upside-down tree, with the first decision rule at the top and subsequent decision
+
+likelihood, naive Bayes, 296
+limit method, 132
+linear discriminant analysis (LDA), 170-172
+linear regression, 231-241
+fitting a line, 231-233
+fitting nonlinear relationship, 235-237
+interactive effects, handling, 233-235
+lasso regression to reduce features, 240
+regularization to reduce variance, 237-239
+
+Discussion
+As an evaluation metric, accuracy has some valuable properties, especially its intui‐
+tiveness. However, better metrics often involve using some balance of precision and
+recall—that is, a trade-off between the optimism and pessimism of our model. F1 rep‐
+196
+Chapter 11: Model Evaluation resents a balance between the recall and precision, where the relative contributions of
+
+analogy might be the best approach. Imagine a very foggy football field (i.e., a two-
+dimensional feature space) with 100 people standing on it (i.e., our observations).
+Because it is foggy, a person can see only a short distance. Every minute each person
+looks around and takes a step in the direction of the most people they can see. As"
+What strategy is recommended for detecting outliers?,Our best strategy is often trying multiple techniques and looking at the results as a whole.,"There is no single best technique for detecting outliers. Instead, we have a collection
+of techniques all with their own advantages and disadvantages. Our best strategy
+is often trying multiple techniques (e.g., both EllipticEnvelope and IQR-based
+detection) and looking at the results as a whole.
+If at all possible, we should look at observations we detect as outliers and try to
+
+hyperparameter value effects visualization,
+213-215
+multiclass classifier predictions, 201-202
+regression models, 204-206
+text report of evaluation metrics, 211-212
+training set size effect visualization, 209-211
+model selection, 217-230
+algorithm-specific methods to speed up, 228
+exhaustive search method, 218-220
+
+1st
+129
+1st
+193
+2nd
+160
+2nd
+119
+3rd
+573
+3rd
+138
+Discussion
+Aggregate functions are especially useful during exploratory data analysis to learn
+information about different subpopulations of data and the relationship between
+variables. By grouping the data and applying aggregate statistics, you can view
+
+trying a range of values to find the one that produces the best result in our end model
+(see Chapter 12).
+See Also
+• Non-negative matrix factorization, Wikipedia
+9.5 Reducing Features on Sparse Data
+Problem
+You have a sparse feature matrix and want to reduce the dimensionality.
+Solution
+Use Truncated Singular Value Decomposition (TSVD):
+
+Discussion
+In the recipes in this chapter, we have kept the number of candidate models small
+to make the code complete quickly. However, in the real world we may have many
+thousands or tens of thousands of models to train. As a result, it can take many hours
+to find the best model.
+To speed up the process, scikit-learn lets us train multiple models simultaneously."
+How can we speed up the process of training multiple models in scikit-learn?,"Scikit-learn lets us train multiple models simultaneously to speed up the process, in addition to algorithm-specific methods to speed up model selection.","There is no single best technique for detecting outliers. Instead, we have a collection
+of techniques all with their own advantages and disadvantages. Our best strategy
+is often trying multiple techniques (e.g., both EllipticEnvelope and IQR-based
+detection) and looking at the results as a whole.
+If at all possible, we should look at observations we detect as outliers and try to
+
+hyperparameter value effects visualization,
+213-215
+multiclass classifier predictions, 201-202
+regression models, 204-206
+text report of evaluation metrics, 211-212
+training set size effect visualization, 209-211
+model selection, 217-230
+algorithm-specific methods to speed up, 228
+exhaustive search method, 218-220
+
+1st
+129
+1st
+193
+2nd
+160
+2nd
+119
+3rd
+573
+3rd
+138
+Discussion
+Aggregate functions are especially useful during exploratory data analysis to learn
+information about different subpopulations of data and the relationship between
+variables. By grouping the data and applying aggregate statistics, you can view
+
+trying a range of values to find the one that produces the best result in our end model
+(see Chapter 12).
+See Also
+• Non-negative matrix factorization, Wikipedia
+9.5 Reducing Features on Sparse Data
+Problem
+You have a sparse feature matrix and want to reduce the dimensionality.
+Solution
+Use Truncated Singular Value Decomposition (TSVD):
+
+Discussion
+In the recipes in this chapter, we have kept the number of candidate models small
+to make the code complete quickly. However, in the real world we may have many
+thousands or tens of thousands of models to train. As a result, it can take many hours
+to find the best model.
+To speed up the process, scikit-learn lets us train multiple models simultaneously."
+What was the range of principal components considered in the search space for the model selection?,"The search space was defined with 'features__pca__n_components': [1, 2, 3], indicating that one, two, or three principal components were considered to produce the best model.","produce an overall measurement.
+In our solution, we conducted k-fold cross-validation using five folds and outputted
+the evaluation scores to cv_results:
+# View score for all 5 folds
+cv_results
+array([0.96111111, 0.96388889, 0.98050139, 0.97214485, 0.97214485])
+There are three important points to consider when we are using KFCV. First, KFCV
+
+over. In our solution, we defined features__pca__n_components': [1, 2, 3] in
+the search space to indicate that we want to discover if one, two, or three principal
+components produce the best model.
+After model selection is complete, we can view the preprocessing values that pro‐
+duced the best model. For example, we can see the best number of principal
+
+score of the cross-validated models tell us that we would likely benefit from addi‐
+tional observations (although in practice this might not be feasible).
+See Also
+• scikit-learn documentation: Learning Curve
+11.12 Creating a Text Report of Evaluation Metrics
+Problem
+You want a quick description of a classifier’s performance.
+
+11.10 Creating a Custom Evaluation Metric                                                              208
+11.11 Visualizing the Effect of Training Set Size                                                       209
+11.12 Creating a Text Report of Evaluation Metrics                                                 211
+
+84-85
+detecting outliers, 77-79
+discretizating features, 81
+generating polynomial and interaction fea‐
+tures, 74-76
+grouping observations using clustering,
+83-84
+handling outliers, 79-81
+imputing missing values, 86-88
+normalizing observations, 72-74
+rescaling numerical features, 69-70
+standardizing numerical features, 71-72"
+How was the performance of the model evaluated during k-fold cross-validation?,"The performance of the model was evaluated using k-fold cross-validation with five folds, and the evaluation scores were outputted to cv_results, resulting in scores of [0.96111111, 0.96388889, 0.98050139, 0.97214485, 0.97214485].","produce an overall measurement.
+In our solution, we conducted k-fold cross-validation using five folds and outputted
+the evaluation scores to cv_results:
+# View score for all 5 folds
+cv_results
+array([0.96111111, 0.96388889, 0.98050139, 0.97214485, 0.97214485])
+There are three important points to consider when we are using KFCV. First, KFCV
+
+over. In our solution, we defined features__pca__n_components': [1, 2, 3] in
+the search space to indicate that we want to discover if one, two, or three principal
+components produce the best model.
+After model selection is complete, we can view the preprocessing values that pro‐
+duced the best model. For example, we can see the best number of principal
+
+score of the cross-validated models tell us that we would likely benefit from addi‐
+tional observations (although in practice this might not be feasible).
+See Also
+• scikit-learn documentation: Learning Curve
+11.12 Creating a Text Report of Evaluation Metrics
+Problem
+You want a quick description of a classifier’s performance.
+
+11.10 Creating a Custom Evaluation Metric                                                              208
+11.11 Visualizing the Effect of Training Set Size                                                       209
+11.12 Creating a Text Report of Evaluation Metrics                                                 211
+
+84-85
+detecting outliers, 77-79
+discretizating features, 81
+generating polynomial and interaction fea‐
+tures, 74-76
+grouping observations using clustering,
+83-84
+handling outliers, 79-81
+imputing missing values, 86-88
+normalizing observations, 72-74
+rescaling numerical features, 69-70
+standardizing numerical features, 71-72"
+What is the purpose of the scoring parameter in the provided code snippet?,"The scoring parameter defines the metric for success, with a number of options discussed in other sections.","worth noting:
+cv
+cv determines our cross-validation technique. K-fold is the most common by far,
+but there are others, such as leave-one-out cross-validation where the number of
+folds k equals the number of data points in the set.
+scoring
+scoring defines the metric for success, a number of which are discussed in other
+
+result = tune.run(
+train_model,
+resources_per_trial={""cpu"": 2},
+356
+Chapter 21: Neural Networks config=config,
+num_samples=1,
+scheduler=scheduler,
+progress_reporter=reporter
+best_trial = result.get_best_trial(""loss"", ""min"", ""last"")
+print(""Best trial config: {}"".format(best_trial.config))
+print(""Best trial final validation loss: {}"".format(
+
+weighted avg       0.98      0.97      0.97        38
+Discussion
+classification_report provides a quick means for us to see some common evalu‐
+ation metrics, including precision, recall, and F1 score (described in Recipe 11.4).
+Support refers to the number of observations in each class.
+212
+Chapter 11: Model Evaluation See Also
+
+197-200
+roc_curve, 197
+rolling method, 129-130
+rolling time windows, 129-130
+round method, 342
+rows in dataframes
+deleting, 53
+dropping duplicates, 54-55
+grouping by time, 57-59
+grouping by value, 56-57
+selecting based on conditionals, 43-44
+RSS (residual sum of squares), 238
+R² (coefficient of determination), 192, 205, 206
+
+[ 0.39508844, -1.34564911,  0.4228057 ],
+[-0.55383035,  0.82880112,  1.73232647]])
+Once we have conducted RFE, we can see the number of features we should keep:
+# Number of best features
+rfecv.n_features_
+We can also see which of those features we should keep:
+# Which categories are best
+rfecv.support_"
+How can you determine the number of best features to keep after conducting Recursive Feature Elimination (RFE)?,You can determine the number of best features to keep by checking the rfecv.n_features_ attribute after conducting RFE.,"worth noting:
+cv
+cv determines our cross-validation technique. K-fold is the most common by far,
+but there are others, such as leave-one-out cross-validation where the number of
+folds k equals the number of data points in the set.
+scoring
+scoring defines the metric for success, a number of which are discussed in other
+
+result = tune.run(
+train_model,
+resources_per_trial={""cpu"": 2},
+356
+Chapter 21: Neural Networks config=config,
+num_samples=1,
+scheduler=scheduler,
+progress_reporter=reporter
+best_trial = result.get_best_trial(""loss"", ""min"", ""last"")
+print(""Best trial config: {}"".format(best_trial.config))
+print(""Best trial final validation loss: {}"".format(
+
+weighted avg       0.98      0.97      0.97        38
+Discussion
+classification_report provides a quick means for us to see some common evalu‐
+ation metrics, including precision, recall, and F1 score (described in Recipe 11.4).
+Support refers to the number of observations in each class.
+212
+Chapter 11: Model Evaluation See Also
+
+197-200
+roc_curve, 197
+rolling method, 129-130
+rolling time windows, 129-130
+round method, 342
+rows in dataframes
+deleting, 53
+dropping duplicates, 54-55
+grouping by time, 57-59
+grouping by value, 56-57
+selecting based on conditionals, 43-44
+RSS (residual sum of squares), 238
+R² (coefficient of determination), 192, 205, 206
+
+[ 0.39508844, -1.34564911,  0.4228057 ],
+[-0.55383035,  0.82880112,  1.73232647]])
+Once we have conducted RFE, we can see the number of features we should keep:
+# Number of best features
+rfecv.n_features_
+We can also see which of those features we should keep:
+# Which categories are best
+rfecv.support_"
+What is the purpose of saving a trained model?,"The purpose of saving a trained model is to be able to load it when needed by an application and make requests to that application to get predictions, thereby making our work worthwhile and allowing us to integrate the model with an existing software application.","identifying important features, 252-254
+regressor training, 250
+selecting important features, 254
+Index
+395 random method, 19-20
+random value generation, 19-20
+RandomForestClassifier, 99, 248-250
+RandomForestRegressor, 250
+RandomizedSearchCV, 220-222
+rank of a matrix, finding, 13
+ravel method, 12
+ray tuning library, 355-357
+
+# Show results
+182
+Chapter 10: Dimensionality Reduction Using Feature Selection print(""Original number of features:"", features.shape[1])
+print(""Reduced number of features:"", features_kbest.shape[1])
+Original number of features: 4
+Reduced number of features: 2
+Instead of selecting a specific number of features, we can use SelectPercentile to
+
+creating classifier, 266-267
+evaluating ANNs, 273-274
+finding ANNs, 270-273
+finding observation’s nearest neighbors,
+263-266
+identifying best neighborhood size, 267-268
+imputing missing values with, 86-88
+numerical data requirement, 89
+radius-based nearest neighbors, 269
+kernel functions, 140-142, 169, 286-289
+
+all our work to be worthwhile, we eventually need to do something with our model,
+such as integrate it with an existing software application. To accomplish this goal, we
+need to be able to save our models after training, load them when they are needed by
+an application, and then make requests to that application to get predictions.
+
+range of values for C. In Recipe 12.1 our possible hyperparameter space included
+both C and another hyperparameter (the regularization penalty norm). This limita‐
+tion is common to many of scikit-learn’s model-specific cross-validated approaches.
+See Also
+• scikit-learn documentation: LogisticRegressionCV"
+How can the number of features be reduced using feature selection?,"The number of features can be reduced using feature selection by selecting a specific number of features or by using SelectPercentile, which allows reducing the number of features to a certain percentage, as shown in the example where the original number of features was reduced from 4 to 2.","identifying important features, 252-254
+regressor training, 250
+selecting important features, 254
+Index
+395 random method, 19-20
+random value generation, 19-20
+RandomForestClassifier, 99, 248-250
+RandomForestRegressor, 250
+RandomizedSearchCV, 220-222
+rank of a matrix, finding, 13
+ravel method, 12
+ray tuning library, 355-357
+
+# Show results
+182
+Chapter 10: Dimensionality Reduction Using Feature Selection print(""Original number of features:"", features.shape[1])
+print(""Reduced number of features:"", features_kbest.shape[1])
+Original number of features: 4
+Reduced number of features: 2
+Instead of selecting a specific number of features, we can use SelectPercentile to
+
+creating classifier, 266-267
+evaluating ANNs, 273-274
+finding ANNs, 270-273
+finding observation’s nearest neighbors,
+263-266
+identifying best neighborhood size, 267-268
+imputing missing values with, 86-88
+numerical data requirement, 89
+radius-based nearest neighbors, 269
+kernel functions, 140-142, 169, 286-289
+
+all our work to be worthwhile, we eventually need to do something with our model,
+such as integrate it with an existing software application. To accomplish this goal, we
+need to be able to save our models after training, load them when they are needed by
+an application, and then make requests to that application to get predictions.
+
+range of values for C. In Recipe 12.1 our possible hyperparameter space included
+both C and another hyperparameter (the regularization penalty norm). This limita‐
+tion is common to many of scikit-learn’s model-specific cross-validated approaches.
+See Also
+• scikit-learn documentation: LogisticRegressionCV"
+What is the primary goal when creating models?,"The primary goal is not to create models, but to create high-quality models, as they are only as useful as the quality of their predictions.","are only as useful as the quality of their predictions, and thus, fundamentally, our goal
+is not to create models (which is easy) but to create high-quality models (which is
+hard). Therefore, before we explore the myriad learning algorithms, let’s first learn
+how we can evaluate the models they produce.
+
+and tuned two hyperparameters: C and the regularization penalty. We also specified
+two other parameters, the solver and max iterations. Don’t worry if you don’t know
+what these terms mean; we cover them in the next few chapters. Just realize that C
+and the regularization penalty can take a range of values, which have to be specified
+
+One downside of the feature extraction techniques we discuss is that the new features
+we generate will not be interpretable by humans. They will contain as much or
+nearly as much ability to train our models but will appear to the human eye as a
+collection of random numbers. If we wanted to maintain our ability to interpret our
+
+parameters for, 225
+and rescaling a numerical feature, 69-70
+pretrained models
+image classification fine-tuning, 163-164
+image embeddings, 159
+with unstructured data, 369, 369-371
+principal component analysis (PCA), 166-170
+prior, naive Bayes, 296
+probability estimates for prediction, 199-200
+protocol buffer (PB) format, TensorFlow, 376
+
+hyperparameter value effects, 213-215
+neural networks, 342-345, 358
+training set size effect, 209-211
+ViT (Vision Transformer) model, 369
+Voronoi tessellations, 271-273
+VT (variance thresholding), 178
+weight regularization (weight decay), 345-347
+weighting word importance, 116-117
+weights (see parameters)"
+What is one downside of the feature extraction techniques discussed?,"One downside of the feature extraction techniques is that the new features generated will not be interpretable by humans and will appear as a collection of random numbers, despite containing as much or nearly as much ability to train models.","are only as useful as the quality of their predictions, and thus, fundamentally, our goal
+is not to create models (which is easy) but to create high-quality models (which is
+hard). Therefore, before we explore the myriad learning algorithms, let’s first learn
+how we can evaluate the models they produce.
+
+and tuned two hyperparameters: C and the regularization penalty. We also specified
+two other parameters, the solver and max iterations. Don’t worry if you don’t know
+what these terms mean; we cover them in the next few chapters. Just realize that C
+and the regularization penalty can take a range of values, which have to be specified
+
+One downside of the feature extraction techniques we discuss is that the new features
+we generate will not be interpretable by humans. They will contain as much or
+nearly as much ability to train our models but will appear to the human eye as a
+collection of random numbers. If we wanted to maintain our ability to interpret our
+
+parameters for, 225
+and rescaling a numerical feature, 69-70
+pretrained models
+image classification fine-tuning, 163-164
+image embeddings, 159
+with unstructured data, 369, 369-371
+principal component analysis (PCA), 166-170
+prior, naive Bayes, 296
+probability estimates for prediction, 199-200
+protocol buffer (PB) format, TensorFlow, 376
+
+hyperparameter value effects, 213-215
+neural networks, 342-345, 358
+training set size effect, 209-211
+ViT (Vision Transformer) model, 369
+Voronoi tessellations, 271-273
+VT (variance thresholding), 178
+weight regularization (weight decay), 345-347
+weighting word importance, 116-117
+weights (see parameters)"
+What is the purpose of splitting observations into training and test sets in validation?,"The purpose of splitting observations into training and test sets in validation is to hold off a slice of data for testing, allowing us to evaluate the performance of our machine learning model on unseen data.","from data they have never seen before.
+One strategy might be to hold off a slice of data for testing. This is called validation
+(or hold-out). In validation, our observations (features and targets) are split into two
+sets, traditionally called the training set and the test set. We take the test set and put it
+
+tool in our toolkit. However, before we can apply machine learning to images, we
+often first need to transform the raw images to features usable by our learning
+algorithms. As with textual data, there are also many pretrained classifiers available
+for images that we can use to extract features or objects of interest to use as inputs to
+
+predicted probabilities, 289-291
+support_vectors_ method, 291
+SVC (support vector classifier), 283
+SVD (Singular Value Decomposition), 175
+T method, 11
+tab-separated value (TSV) files, 26
+tagging parts of speech, 110-112
+TensorFlow, 160, 375, 380-382
+TensorFlow Serving framework, 380-382
+tensorflow_hub, 160
+
+clustering, and tree-based models
+•	 Saving, loading, and serving trained models from
+multiple frameworks
+Kyle Gallatin is a software
+engineer on the machine learning
+platform team at Etsy. He has
+years of experience as a data
+analyst, data scientist, and
+machine learning engineer.
+Chris Albon is the director
+
+• Object detection (example: identifying and classifying specific objects within an
+image)
+• Generative models (example: models that generate text based on a given input
+such as the GPT models)
+As deep learning has grown in popularity and become increasingly commoditized,
+both the open source and enterprise solutions for dealing with these use cases have"
+What are some examples of use cases that have become increasingly commoditized with the growth of deep learning?,"Some examples of use cases that have become increasingly commoditized with the growth of deep learning include object detection, such as identifying and classifying specific objects within an image, and generative models, such as models that generate text based on a given input, like the GPT models.","from data they have never seen before.
+One strategy might be to hold off a slice of data for testing. This is called validation
+(or hold-out). In validation, our observations (features and targets) are split into two
+sets, traditionally called the training set and the test set. We take the test set and put it
+
+tool in our toolkit. However, before we can apply machine learning to images, we
+often first need to transform the raw images to features usable by our learning
+algorithms. As with textual data, there are also many pretrained classifiers available
+for images that we can use to extract features or objects of interest to use as inputs to
+
+predicted probabilities, 289-291
+support_vectors_ method, 291
+SVC (support vector classifier), 283
+SVD (Singular Value Decomposition), 175
+T method, 11
+tab-separated value (TSV) files, 26
+tagging parts of speech, 110-112
+TensorFlow, 160, 375, 380-382
+TensorFlow Serving framework, 380-382
+tensorflow_hub, 160
+
+clustering, and tree-based models
+•	 Saving, loading, and serving trained models from
+multiple frameworks
+Kyle Gallatin is a software
+engineer on the machine learning
+platform team at Etsy. He has
+years of experience as a data
+analyst, data scientist, and
+machine learning engineer.
+Chris Albon is the director
+
+• Object detection (example: identifying and classifying specific objects within an
+image)
+• Generative models (example: models that generate text based on a given input
+such as the GPT models)
+As deep learning has grown in popularity and become increasingly commoditized,
+both the open source and enterprise solutions for dealing with these use cases have"
+How is the autograd feature utilized in PyTorch?,"The autograd feature in PyTorch is utilized for applying operations to elements and is discussed in the context of PyTorch, specifically on page 326-327, where it is explained in detail, although the provided text does not include this explanation, it is mentioned to be there.","transforming features, numerical, 76-77
+translate method, 107
+transposing
+matrices, 11
+tensors, 321
+trees and forests, 243-262
+boosting to improve performance, 258-260
+controlling tree size, 257-258
+decision tree training, 243-246
+and imbalanced classes, 255-257
+LightGBM to improve performance,
+261-262
+
+pseudorandom values, generating, 19-20
+punctuation, removing from text, 106
+pymysql library, 31
+PySpark, 29
+Python Flask application, 380
+PyTorch, 313-323
+applying operations to elements, 318
+attributes for tensors, 317
+autograd feature, 326-327
+convolutional neural network, 362-364
+creating tensors, 313
+
+the same variables over points in time. In this chapter, we will build a toolbox of
+strategies for handling time series data, including tackling time zones and creating
+lagged time features. Specifically, we will focus on the time series tools in the pandas
+library, which centralizes the functionality of many other general libraries such as
+
+frequency)
+tf-idf vectors to implement text, 118-119
+TfidfVectorizer, 116-119
+thresholding
+Index
+397 binarizing images, 145-147
+binary classifier thresholds, 197-200
+feature selection, 178-180
+time series data (see dates and times)
+time zones, handling, 123-124
+TimeDelta data type, 127
+tokenizing text, 107-110
+
+torch.save function, 352
+torch_viz library, 358
+to_datetime method, 121-122
+to_sparse function, 315
+TPR (true positive rate), 199
+trace method, 15
+trace of a matrix, calculating, 15
+training set, 188-190, 209-211
+transfer learning, 160, 369
+transform operation, 70
+transformers library, 119, 367-371"
+What is the purpose of the to_datetime method in the pandas library?,"The to_datetime method in the pandas library is used for handling dates and times, specifically for converting data to a datetime format, as mentioned on page 121-122, where its usage is explained.","transforming features, numerical, 76-77
+translate method, 107
+transposing
+matrices, 11
+tensors, 321
+trees and forests, 243-262
+boosting to improve performance, 258-260
+controlling tree size, 257-258
+decision tree training, 243-246
+and imbalanced classes, 255-257
+LightGBM to improve performance,
+261-262
+
+pseudorandom values, generating, 19-20
+punctuation, removing from text, 106
+pymysql library, 31
+PySpark, 29
+Python Flask application, 380
+PyTorch, 313-323
+applying operations to elements, 318
+attributes for tensors, 317
+autograd feature, 326-327
+convolutional neural network, 362-364
+creating tensors, 313
+
+the same variables over points in time. In this chapter, we will build a toolbox of
+strategies for handling time series data, including tackling time zones and creating
+lagged time features. Specifically, we will focus on the time series tools in the pandas
+library, which centralizes the functionality of many other general libraries such as
+
+frequency)
+tf-idf vectors to implement text, 118-119
+TfidfVectorizer, 116-119
+thresholding
+Index
+397 binarizing images, 145-147
+binary classifier thresholds, 197-200
+feature selection, 178-180
+time series data (see dates and times)
+time zones, handling, 123-124
+TimeDelta data type, 127
+tokenizing text, 107-110
+
+torch.save function, 352
+torch_viz library, 358
+to_datetime method, 121-122
+to_sparse function, 315
+TPR (true positive rate), 199
+trace method, 15
+trace of a matrix, calculating, 15
+training set, 188-190, 209-211
+transfer learning, 160, 369
+transform operation, 70
+transformers library, 119, 367-371"
+What class is used to define a simple neural network architecture in PyTorch?,The PyTorch nn.Module class is used to define a simple neural network architecture.,"transforming features, 76-77
+NumPy arrays, 1-20
+applying functions over array elements, 7
+creating PyTorch tensors from, 314
+descriptive statistics calculation, 9
+dot product calculation, 15
+dropping observations, 84
+matrices, 2-4, 7, 11-19
+maximum and minimum values in, 8
+NaN value, 50
+preallocating, 4
+
+[ 1.4096, -0.8122]], grad_fn=<DivBackward0>)
+21.3 Designing a Neural Network
+Problem
+You want to design a neural network.
+Solution
+Use the PyTorch nn.Module class to define a simple neural network architecture:
+# Import libraries
+import torch
+import torch.nn as nn
+21.3 Designing a Neural Network
+329 # Define a neural network
+
+selecting the right architecture is mostly an art and the topic of much research.
+To construct a feedforward neural network in PyTorch, we need to make a number
+of choices about both the network architecture and training process. Remember that
+each unit in the hidden layers:
+1. Receives a number of inputs.
+
+Condensed; and the code font is Dalton Maag’s Ubuntu Mono. Learn from experts.
+Become one yourself.
+Books | Live online courses
+Instant answers | Virtual events
+Videos | Interactive learning
+Get started at oreilly.com.
+©2023 O’Reilly Media, Inc. O’Reilly is a registered trademark of O’Reilly Media, Inc.  175  7x9.1975 DATA
+
+21.1 Using Autograd with PyTorch                                                                             326
+21.2 Preprocessing Data for Neural Networks                                                          328
+21.3 Designing a Neural Network                                                                               329"
+What is involved in constructing a feedforward neural network in PyTorch?,"To construct a feedforward neural network in PyTorch, we need to make a number of choices about both the network architecture and training process, including the number of inputs each unit in the hidden layers receives.","transforming features, 76-77
+NumPy arrays, 1-20
+applying functions over array elements, 7
+creating PyTorch tensors from, 314
+descriptive statistics calculation, 9
+dot product calculation, 15
+dropping observations, 84
+matrices, 2-4, 7, 11-19
+maximum and minimum values in, 8
+NaN value, 50
+preallocating, 4
+
+[ 1.4096, -0.8122]], grad_fn=<DivBackward0>)
+21.3 Designing a Neural Network
+Problem
+You want to design a neural network.
+Solution
+Use the PyTorch nn.Module class to define a simple neural network architecture:
+# Import libraries
+import torch
+import torch.nn as nn
+21.3 Designing a Neural Network
+329 # Define a neural network
+
+selecting the right architecture is mostly an art and the topic of much research.
+To construct a feedforward neural network in PyTorch, we need to make a number
+of choices about both the network architecture and training process. Remember that
+each unit in the hidden layers:
+1. Receives a number of inputs.
+
+Condensed; and the code font is Dalton Maag’s Ubuntu Mono. Learn from experts.
+Become one yourself.
+Books | Live online courses
+Instant answers | Virtual events
+Videos | Interactive learning
+Get started at oreilly.com.
+©2023 O’Reilly Media, Inc. O’Reilly is a registered trademark of O’Reilly Media, Inc.  175  7x9.1975 DATA
+
+21.1 Using Autograd with PyTorch                                                                             326
+21.2 Preprocessing Data for Neural Networks                                                          328
+21.3 Designing a Neural Network                                                                               329"
+What is the purpose of edge detection in image processing?,"Edge detection allows us to remove low-information areas and isolate the areas of images containing the most information, such as where the background sky meets the airplane, which can contain unique details like an object's shape.","might reasonably assume the price for mansions with over 100 bathrooms is driven
+by a different dynamic than regular family homes. Furthermore, if we are training a
+80
+Chapter 4: Handling Numerical Data model to use as part of an online home loan web application, we might assume that
+our potential users will not include billionaires looking to buy a mansion.
+
+(fc3): Linear(in_features=16, out_features=1, bias=True)
+Discussion
+Neural networks consist of layers of units. However, there’s incredible variety in the types
+of layers and how they are combined to form the network’s architecture. While there are
+commonly used architecture patterns (which we’ll cover in this chapter), the truth is that
+
+8.6 Sharpening Images                                                                                                  141
+8.7 Enhancing Contrast                                                                                                142
+8.8 Isolating Colors                                                                                                        143
+
+selecting dates and times, 124-125
+time zones, 123-124
+datetime library, 121
+days of the week, encoding, 127
+day_name method, 127
+DBSCAN clustering, 308-309
+decision trees, 243
+(see also trees and forests)
+DecisionTreeClassifier, 243
+DecisionTreeRegressor, 245
+deep learning, 325
+deleting columns, dataframes, 51-53
+
+sky looks very much like another and is unlikely to contain unique or interesting
+information. However, patches where the background sky meets the airplane contain
+a lot of information (e.g., an object’s shape). Edge detection allows us to remove low-
+information areas and isolate the areas of images containing the most information."
+Why might the price of mansions with over 100 bathrooms be driven by a different dynamic than regular family homes?,"The price for mansions with over 100 bathrooms might reasonably be assumed to be driven by a different dynamic than regular family homes, possibly due to the unique characteristics and requirements of such large and luxurious properties, which may not be relevant to the average homebuyer or user of an online home loan web application.","might reasonably assume the price for mansions with over 100 bathrooms is driven
+by a different dynamic than regular family homes. Furthermore, if we are training a
+80
+Chapter 4: Handling Numerical Data model to use as part of an online home loan web application, we might assume that
+our potential users will not include billionaires looking to buy a mansion.
+
+(fc3): Linear(in_features=16, out_features=1, bias=True)
+Discussion
+Neural networks consist of layers of units. However, there’s incredible variety in the types
+of layers and how they are combined to form the network’s architecture. While there are
+commonly used architecture patterns (which we’ll cover in this chapter), the truth is that
+
+8.6 Sharpening Images                                                                                                  141
+8.7 Enhancing Contrast                                                                                                142
+8.8 Isolating Colors                                                                                                        143
+
+selecting dates and times, 124-125
+time zones, 123-124
+datetime library, 121
+days of the week, encoding, 127
+day_name method, 127
+DBSCAN clustering, 308-309
+decision trees, 243
+(see also trees and forests)
+DecisionTreeClassifier, 243
+DecisionTreeRegressor, 245
+deep learning, 325
+deleting columns, dataframes, 51-53
+
+sky looks very much like another and is unlikely to contain unique or interesting
+information. However, patches where the background sky meets the airplane contain
+a lot of information (e.g., an object’s shape). Edge detection allows us to remove low-
+information areas and isolate the areas of images containing the most information."
+What is the potential drawback of standardizing images by resizing them?,"The potential drawback of standardizing images by resizing them is that it can result in the loss of some information present in the larger image, as the size of the matrix containing the image information is reduced.","trained model, making decision trees one of the most interpretable models in
+machine learning. In our solution, we exported our trained model in DOT format (a
+graph description language) and then used that to draw the graph.
+If we look at the root node, we can see the decision rule is that if petal widths are
+
+dictionaries of features, encoding, 38, 94-96
+DictVectorizer, 94-96
+digitize method, 82
+dimensionality reduction, 165
+(see also feature extraction; feature selec‐
+tion)
+convolutional neural network, 364
+linear discriminant analysis, 170-172
+principal component analysis, 166-170
+directed acyclic graph (DAG), 327
+
+Parquet file, loading data from, 28
+parsing and cleaning HTML, 106
+PB (protocol buffer) format, TensorFlow, 376
+PCA (principal component analysis), 166-170
+performance
+algorithm-specific methods for model selec‐
+tion, 228
+boosting to improve trees and forests,
+258-262
+evaluation after selection, 229-230
+
+have the same dimensions. Standardizing (resizing) images does come at the cost of
+losing some information present in the larger image, as can be seen in the picture
+of the airplane. Images are matrices of information, and when we reduce the size of
+the image, we are reducing the size of that matrix and the information it contains.
+
+common scenario), we should be inclined to use other evaluation metrics.
+Many of scikit-learn’s built-in metrics are for evaluating binary classifiers. However,
+many of these metrics can be extended for use when we have more than two classes.
+Precision, recall, and F1 scores are useful metrics that we have already covered in"
+What type of metrics can be used to evaluate the performance of a classifier with more than two classes?,"Precision, recall, and F1 scores are useful metrics that can be used to evaluate the performance of a classifier with more than two classes, and many of scikit-learn's built-in metrics for binary classifiers can be extended for use in this scenario.","trained model, making decision trees one of the most interpretable models in
+machine learning. In our solution, we exported our trained model in DOT format (a
+graph description language) and then used that to draw the graph.
+If we look at the root node, we can see the decision rule is that if petal widths are
+
+dictionaries of features, encoding, 38, 94-96
+DictVectorizer, 94-96
+digitize method, 82
+dimensionality reduction, 165
+(see also feature extraction; feature selec‐
+tion)
+convolutional neural network, 364
+linear discriminant analysis, 170-172
+principal component analysis, 166-170
+directed acyclic graph (DAG), 327
+
+Parquet file, loading data from, 28
+parsing and cleaning HTML, 106
+PB (protocol buffer) format, TensorFlow, 376
+PCA (principal component analysis), 166-170
+performance
+algorithm-specific methods for model selec‐
+tion, 228
+boosting to improve trees and forests,
+258-262
+evaluation after selection, 229-230
+
+have the same dimensions. Standardizing (resizing) images does come at the cost of
+losing some information present in the larger image, as can be seen in the picture
+of the airplane. Images are matrices of information, and when we reduce the size of
+the image, we are reducing the size of that matrix and the information it contains.
+
+common scenario), we should be inclined to use other evaluation metrics.
+Many of scikit-learn’s built-in metrics are for evaluating binary classifiers. However,
+many of these metrics can be extended for use when we have more than two classes.
+Precision, recall, and F1 scores are useful metrics that we have already covered in"
+What is the purpose of using make_scorer in scikit-learn?,"The purpose of using make_scorer in scikit-learn is to convert a custom evaluation metric into a scorer function, allowing users to define their own metrics for evaluating model performance.","• scikit-learn documentation: silhouette_score
+11.10 Creating a Custom Evaluation Metric
+Problem
+You want to evaluate a model using a metric you created.
+Solution
+Create the metric as a function and convert it into a scorer function using scikit-
+learn’s make_scorer:
+# Load libraries
+from sklearn.metrics import make_scorer, r2_score
+
+merging operations (joins), 64-67
+metrics
+custom evaluation, 208-209
+neural network, 332
+text report of evaluation, 211-212
+min method
+DataFrame, 47
+NumPy array, 9
+PyTorch, 319
+mini-batch k-means, 306
+MiniBatchKMeans, 307
+MinMaxScaler, 69-70
+missing at random (MAR) data, 85
+missing completely at random (MCAR) data,
+
+0.9997906102882058
+208
+Chapter 11: Model Evaluation Discussion
+While scikit-learn has a number of built-in metrics for evaluating model perfor‐
+mance, it is often useful to define our own metrics. scikit-learn makes this easy using
+make_scorer. First, we define a function that takes in two arguments—the ground
+
+11.8 Evaluating Regression Models
+205 Both models have the same total errors, 10; however, MSE would consider model A
+(MSE = 100) worse than model B (MSE = 50). In practice this implication is rarely an
+issue (and indeed can be theoretically beneficial), and MSE works perfectly fine as an
+evaluation metric.
+
+A common alternative regression evaluation metric is the default metric we used in
+Recipe 11.2, R2, which measures the amount of variance in the target vector that is
+explained by the model.
+R2 = 1 −∑i = 1
+yi −yi
+∑i = 1
+yi −y 2
+where yi is the true target value of the ith observation, yi is the predicted value for the"
+What does the R2 regression evaluation metric measure?,"The R2 regression evaluation metric measures the amount of variance in the target vector that is explained by the model, calculated as R2 = 1 −∑i = 1 (yi −yi)^2 / ∑i = 1 (yi −y)^2, where yi is the true target value of the ith observation and yi is the predicted value for the ith observation.","• scikit-learn documentation: silhouette_score
+11.10 Creating a Custom Evaluation Metric
+Problem
+You want to evaluate a model using a metric you created.
+Solution
+Create the metric as a function and convert it into a scorer function using scikit-
+learn’s make_scorer:
+# Load libraries
+from sklearn.metrics import make_scorer, r2_score
+
+merging operations (joins), 64-67
+metrics
+custom evaluation, 208-209
+neural network, 332
+text report of evaluation, 211-212
+min method
+DataFrame, 47
+NumPy array, 9
+PyTorch, 319
+mini-batch k-means, 306
+MiniBatchKMeans, 307
+MinMaxScaler, 69-70
+missing at random (MAR) data, 85
+missing completely at random (MCAR) data,
+
+0.9997906102882058
+208
+Chapter 11: Model Evaluation Discussion
+While scikit-learn has a number of built-in metrics for evaluating model perfor‐
+mance, it is often useful to define our own metrics. scikit-learn makes this easy using
+make_scorer. First, we define a function that takes in two arguments—the ground
+
+11.8 Evaluating Regression Models
+205 Both models have the same total errors, 10; however, MSE would consider model A
+(MSE = 100) worse than model B (MSE = 50). In practice this implication is rarely an
+issue (and indeed can be theoretically beneficial), and MSE works perfectly fine as an
+evaluation metric.
+
+A common alternative regression evaluation metric is the default metric we used in
+Recipe 11.2, R2, which measures the amount of variance in the target vector that is
+explained by the model.
+R2 = 1 −∑i = 1
+yi −yi
+∑i = 1
+yi −y 2
+where yi is the true target value of the ith observation, yi is the predicted value for the"
+What is the formal definition of Mean Squared Error (MSE) in the context of regression models?,"MSE is formally defined as MSE = 1/n ∑(yi - yi) where n is the number of observations, yi is the true value of the target, and yi is the model's predicted value for yi.","array([0.8622399 , 0.85838075, 0.74723548, 0.91354743, 0.84469331])
+Discussion
+MSE is one of the most common evaluation metrics for regression models. Formally,
+MSE is:
+MSE = 1
+n ∑
+i = 1
+yi −yi
+where n is the number of observations, yi is the true value of the target we are
+trying to predict for observation i, and yi is the model’s predicted value for yi. MSE
+
+stochastic gradient descent with momentum, root mean square propagation, and
+adaptive moment estimation (for more information on these optimizers, see “See
+Also” on page 333).
+Sixth, we can select one or more metrics to use to evaluate the performance, such as
+accuracy.
+In our example, we use the torch.nn.Module namespace to compose a simple,
+
+Solution
+Use scikit-learn’s classification_report:
+11.12 Creating a Text Report of Evaluation Metrics
+211 # Load libraries
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+Problem
+Given a trained classification model, you want to evaluate its quality.
+Solution
+Use scikit-learn’s cross_val_score to conduct cross-validation while using the
+scoring parameter to define one of a number of performance metrics, including
+accuracy, precision, recall, and F1. Accuracy is a common performance metric. It is
+
+RFECV, 184-186
+RidgeCV, 239
+CrossEntropyLoss() function, 338
+388
+Index cross_val_score, 190, 194-197
+CSR (compressed sparse row) matrices, 4
+CSV (comma-separated value) file, loading data
+from, 26-27
+custom evaluation metric, creating, 208-209
+DAG (directed acyclic graph), 327
+dataframes (DataFrame object), 37-67"
+How can you evaluate the quality of a trained classification model using scikit-learn?,"You can use scikit-learn's cross_val_score to conduct cross-validation while using the scoring parameter to define one of a number of performance metrics, including accuracy, precision, recall, and F1, or use scikit-learn's classification_report.","array([0.8622399 , 0.85838075, 0.74723548, 0.91354743, 0.84469331])
+Discussion
+MSE is one of the most common evaluation metrics for regression models. Formally,
+MSE is:
+MSE = 1
+n ∑
+i = 1
+yi −yi
+where n is the number of observations, yi is the true value of the target we are
+trying to predict for observation i, and yi is the model’s predicted value for yi. MSE
+
+stochastic gradient descent with momentum, root mean square propagation, and
+adaptive moment estimation (for more information on these optimizers, see “See
+Also” on page 333).
+Sixth, we can select one or more metrics to use to evaluate the performance, such as
+accuracy.
+In our example, we use the torch.nn.Module namespace to compose a simple,
+
+Solution
+Use scikit-learn’s classification_report:
+11.12 Creating a Text Report of Evaluation Metrics
+211 # Load libraries
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+Problem
+Given a trained classification model, you want to evaluate its quality.
+Solution
+Use scikit-learn’s cross_val_score to conduct cross-validation while using the
+scoring parameter to define one of a number of performance metrics, including
+accuracy, precision, recall, and F1. Accuracy is a common performance metric. It is
+
+RFECV, 184-186
+RidgeCV, 239
+CrossEntropyLoss() function, 338
+388
+Index cross_val_score, 190, 194-197
+CSR (compressed sparse row) matrices, 4
+CSV (comma-separated value) file, loading data
+from, 26-27
+custom evaluation metric, creating, 208-209
+DAG (directed acyclic graph), 327
+dataframes (DataFrame object), 37-67"
+What is recommended to use instead of the development server for a production deployment?,A production WSGI server,"0.9073389355742297
+See Also
+• ROC Curves in Python and R
+• The Area Under an ROC Curve
+200
+Chapter 11: Model Evaluation 11.6 Evaluating Multiclass Classifier Predictions
+Problem
+You have a model that predicts three or more classes and want to evaluate the model’s
+performance.
+Solution
+Use cross-validation with an evaluation metric capable of handling more than two
+
+framework to move it to production.
+23.5 Serving TensorFlow Models
+Problem
+You want to serve your trained TensorFlow model using a web server.
+Solution
+Use the open source TensorFlow Serving framework and Docker:
+docker run -p 8501:8501 -p 8500:8500 \
+--mount type=bind,source=$(pwd)/saved_model,target=/models/saved_model/1 \
+
+And then run the application:
+python3 app.py
+* Serving Flask app 'app'
+* Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment.
+Use a production WSGI server instead.
+* Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+Now, we can make predictions to the application and get results by submitting data
+
+INFO:  App Config:  <Config {'ENV': 'production', 'DEBUG': False,
+'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'SECRET_KEY': None,
+'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31),
+'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/',
+'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None,
+
+2023-03-11 14:40:56,090 - seldon_core.wrapper:_set_flask_app_configs:225 -
+INFO:  App Config:  <Config {'ENV': 'production', 'DEBUG': False,
+'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'SECRET_KEY': None,
+'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31),
+'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/',"
+How can you serve your trained TensorFlow model using a web server?,Use the open source TensorFlow Serving framework and Docker,"0.9073389355742297
+See Also
+• ROC Curves in Python and R
+• The Area Under an ROC Curve
+200
+Chapter 11: Model Evaluation 11.6 Evaluating Multiclass Classifier Predictions
+Problem
+You have a model that predicts three or more classes and want to evaluate the model’s
+performance.
+Solution
+Use cross-validation with an evaluation metric capable of handling more than two
+
+framework to move it to production.
+23.5 Serving TensorFlow Models
+Problem
+You want to serve your trained TensorFlow model using a web server.
+Solution
+Use the open source TensorFlow Serving framework and Docker:
+docker run -p 8501:8501 -p 8500:8500 \
+--mount type=bind,source=$(pwd)/saved_model,target=/models/saved_model/1 \
+
+And then run the application:
+python3 app.py
+* Serving Flask app 'app'
+* Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment.
+Use a production WSGI server instead.
+* Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+Now, we can make predictions to the application and get results by submitting data
+
+INFO:  App Config:  <Config {'ENV': 'production', 'DEBUG': False,
+'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'SECRET_KEY': None,
+'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31),
+'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/',
+'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None,
+
+2023-03-11 14:40:56,090 - seldon_core.wrapper:_set_flask_app_configs:225 -
+INFO:  App Config:  <Config {'ENV': 'production', 'DEBUG': False,
+'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'SECRET_KEY': None,
+'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31),
+'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/',"
+What method name is used for serving TensorFlow models?,The method name used for serving TensorFlow models is tensorflow/serving/predict.,"ML models are typically deployed in simple web servers and designed to take input
+data and return predictions. This makes the model available to any client on the same
+network, so other services (such as UIs, users, etc.) can use the ML model to make
+predictions wherever they are in real time. An example use case would be using ML
+
+dot product calculation, 322
+flattening tensors, 321
+image classification with, 163-164
+maximum and minimum values, 319
+multiplying tensors, 323
+neural networks (see neural networks)
+pretrained embeddings, 159-160
+reshaping tensors, 320
+saving and loading a model, 376-378
+selecting elements, 316-317
+
+""name"": ""serving_default_input_8:0""
+},
+""outputs"": {
+""dense_11"": {
+""dtype"": ""DT_FLOAT"",
+""tensor_shape"": {
+""dim"": [
+""size"": ""-1"",
+""name"": """"
+},
+""size"": ""1"",
+""name"": """"
+23.5 Serving TensorFlow Models
+381 ],
+""unknown_rank"": false
+},
+""name"": ""StatefulPartitionedCall:0""
+},
+""method_name"": ""tensorflow/serving/predict""
+
+INFO:  REST gunicorn microservice running on port 9000
+2023-03-11 14:40:56,028 - seldon_core.microservice:main:655 -
+INFO:  REST metrics microservice running on port 6000
+2023-03-11 14:40:56,029 - seldon_core.microservice:main:665 -
+INFO:  Starting servers
+2023-03-11 14:40:56,029 - seldon_core.microservice:start_servers:80 -
+
+<function post_worker_init at 0x7f5aee2c89d0>, 'worker_exit':
+functools.partial(<function worker_exit at 0x7f5aee2ca170>,
+seldon_metrics=<seldon_core.metrics.SeldonMetrics object at
+0x7f5a769f0b20>), 'keepalive': 2}
+2023-03-11 14:40:56,055 - seldon_core.microservice:server:504 -
+INFO:  GRPC Server Binding to 0.0.0.0:5000 with 1 processes."
+On which port is the REST gunicorn microservice running?,The REST gunicorn microservice is running on port 9000.,"ML models are typically deployed in simple web servers and designed to take input
+data and return predictions. This makes the model available to any client on the same
+network, so other services (such as UIs, users, etc.) can use the ML model to make
+predictions wherever they are in real time. An example use case would be using ML
+
+dot product calculation, 322
+flattening tensors, 321
+image classification with, 163-164
+maximum and minimum values, 319
+multiplying tensors, 323
+neural networks (see neural networks)
+pretrained embeddings, 159-160
+reshaping tensors, 320
+saving and loading a model, 376-378
+selecting elements, 316-317
+
+""name"": ""serving_default_input_8:0""
+},
+""outputs"": {
+""dense_11"": {
+""dtype"": ""DT_FLOAT"",
+""tensor_shape"": {
+""dim"": [
+""size"": ""-1"",
+""name"": """"
+},
+""size"": ""1"",
+""name"": """"
+23.5 Serving TensorFlow Models
+381 ],
+""unknown_rank"": false
+},
+""name"": ""StatefulPartitionedCall:0""
+},
+""method_name"": ""tensorflow/serving/predict""
+
+INFO:  REST gunicorn microservice running on port 9000
+2023-03-11 14:40:56,028 - seldon_core.microservice:main:655 -
+INFO:  REST metrics microservice running on port 6000
+2023-03-11 14:40:56,029 - seldon_core.microservice:main:665 -
+INFO:  Starting servers
+2023-03-11 14:40:56,029 - seldon_core.microservice:start_servers:80 -
+
+<function post_worker_init at 0x7f5aee2c89d0>, 'worker_exit':
+functools.partial(<function worker_exit at 0x7f5aee2ca170>,
+seldon_metrics=<seldon_core.metrics.SeldonMetrics object at
+0x7f5a769f0b20>), 'keepalive': 2}
+2023-03-11 14:40:56,055 - seldon_core.microservice:server:504 -
+INFO:  GRPC Server Binding to 0.0.0.0:5000 with 1 processes."
+"What method can be used to reduce overfitting of data in a neural network, and what are the techniques used to achieve this?","The method used to reduce overfitting of data is weight regularization, dropout, and early stopping. Dropout is used to reduce overfitting by randomly dropping out units during training, early stopping stops the training when the model starts to overfit, and weight regularization adds a penalty term to the loss function to reduce the magnitude of the model's weights.","also available for most titles (http://oreilly.com). For more information, contact our corporate/institutional
+sales department: 800-998-9938 or corporate@oreilly.com.
+Acquisitions Editor: Nicole Butterfield
+Development Editor: Jeff Bleiel
+Production Editor: Clare Laylock
+Copyeditor: Penelope Perkins
+
+weighting word importance, 116
+sparse tensor, 315
+split operation, cleaning text, 103
+SQL, remote database query, 31
+SQLite database query, 30-31
+StandardScaler, 71-72, 328
+std method, 9
+stemming of words, 109
+stochastic average gradient (SAG) solver, 279
+stop words, removing from text, 108-109
+stratified k-fold cross validation, 189
+
+optimizer, neural network, 332
+ordinal features, 89, 92-94
+out-of-bag (OOB) observations, 251
+outer join, 65, 66
+outliers, 77-81
+output layer, neural network, 325
+overfitting of data
+dropout to reduce, 350-352
+early stopping to reduce, 347-349
+visualizing, 345
+weight regularization to reduce, 345-347
+
+most in the real world. While connecting and reading from an example sqlite
+database is useful, it’s likely not representative of tables you’ll need to connect to in
+an enterprise environment. Most SQL instances that you’ll connect to will require
+you to connect to the host and port of a remote machine, specifying a username
+
+time goes on, people start to group together as they repeatedly take steps toward
+larger and larger crowds. The end result is clusters of people around the field. People
+are assigned to the clusters in which they end up.
+scikit-learn’s actual implementation of mean shift, MeanShift, is more complex but"
+"How does scikit-learn's MeanShift implementation assign people to clusters, and what is the end result of this process?","Scikit-learn's MeanShift implementation assigns people to clusters based on their proximity to each other, as they repeatedly take steps toward larger and larger crowds. The end result is clusters of people around the field, with people assigned to the clusters in which they end up.","also available for most titles (http://oreilly.com). For more information, contact our corporate/institutional
+sales department: 800-998-9938 or corporate@oreilly.com.
+Acquisitions Editor: Nicole Butterfield
+Development Editor: Jeff Bleiel
+Production Editor: Clare Laylock
+Copyeditor: Penelope Perkins
+
+weighting word importance, 116
+sparse tensor, 315
+split operation, cleaning text, 103
+SQL, remote database query, 31
+SQLite database query, 30-31
+StandardScaler, 71-72, 328
+std method, 9
+stemming of words, 109
+stochastic average gradient (SAG) solver, 279
+stop words, removing from text, 108-109
+stratified k-fold cross validation, 189
+
+optimizer, neural network, 332
+ordinal features, 89, 92-94
+out-of-bag (OOB) observations, 251
+outer join, 65, 66
+outliers, 77-81
+output layer, neural network, 325
+overfitting of data
+dropout to reduce, 350-352
+early stopping to reduce, 347-349
+visualizing, 345
+weight regularization to reduce, 345-347
+
+most in the real world. While connecting and reading from an example sqlite
+database is useful, it’s likely not representative of tables you’ll need to connect to in
+an enterprise environment. Most SQL instances that you’ll connect to will require
+you to connect to the host and port of a remote machine, specifying a username
+
+time goes on, people start to group together as they repeatedly take steps toward
+larger and larger crowds. The end result is clusters of people around the field. People
+are assigned to the clusters in which they end up.
+scikit-learn’s actual implementation of mean shift, MeanShift, is more complex but"
+What is the purpose of reducing the number of features in data using feature extraction techniques?,"The purpose of reducing the number of features in data using feature extraction techniques is to come up with a new set where the original number of features is greater than the new number, while still keeping much of the underlying information, and reducing the number of features with only a small loss in the data's ability to generate high-quality predictions.","21.10 Reducing Overfitting with Early Stopping                                                      347
+21.11 Reducing Overfitting with Dropout                                                                 350
+21.12 Saving Model Training Progress                                                                       352
+
+21.7 Making Predictions                                                                                               340
+21.8 Visualize Training History                                                                                   342
+21.9 Reducing Overfitting with Weight Regularization                                           345
+
+3.
+a. If weak model predicts xi correctly, wi is decreased.
+a.
+b. If weak model predicts xi incorrectly, wi is increased.
+b.
+4. Train a new weak model where observations with greater wi are given greater
+4.
+priority.
+5. Repeat steps 4 and 5 until the data is perfectly predicted or a preset number of
+
+If you have ever taken an introductory statistics course in college, likely the final topic
+you covered was linear regression. Linear regression and its extensions continue to
+be a common and useful method of making predictions when the target vector is
+a quantitative value (e.g., home price, age). In this chapter we will cover a variety
+
+up with a new set, pnew, where poriginal > pnew, while still keeping much of the underlying
+information. Put another way, we reduce the number of features with only a small
+loss in our data’s ability to generate high-quality predictions. In this chapter, we will
+cover a number of feature extraction techniques to do just this."
+What happens to the weight wi when a weak model predicts xi correctly?,"When a weak model predicts xi correctly, the weight wi is decreased, whereas if the weak model predicts xi incorrectly, the weight wi is increased.","21.10 Reducing Overfitting with Early Stopping                                                      347
+21.11 Reducing Overfitting with Dropout                                                                 350
+21.12 Saving Model Training Progress                                                                       352
+
+21.7 Making Predictions                                                                                               340
+21.8 Visualize Training History                                                                                   342
+21.9 Reducing Overfitting with Weight Regularization                                           345
+
+3.
+a. If weak model predicts xi correctly, wi is decreased.
+a.
+b. If weak model predicts xi incorrectly, wi is increased.
+b.
+4. Train a new weak model where observations with greater wi are given greater
+4.
+priority.
+5. Repeat steps 4 and 5 until the data is perfectly predicted or a preset number of
+
+If you have ever taken an introductory statistics course in college, likely the final topic
+you covered was linear regression. Linear regression and its extensions continue to
+be a common and useful method of making predictions when the target vector is
+a quantitative value (e.g., home price, age). In this chapter we will cover a variety
+
+up with a new set, pnew, where poriginal > pnew, while still keeping much of the underlying
+information. Put another way, we reduce the number of features with only a small
+loss in our data’s ability to generate high-quality predictions. In this chapter, we will
+cover a number of feature extraction techniques to do just this."
+"What does the term frequency, or tf, measure in a document?","The term frequency, or tf, measures how frequently a word appears in a document, which can be evidence that the document is about a specific topic, such as economics if the word 'economy' appears frequently.","important to that document. For example, if the word economy appears frequently, it
+is evidence that the document might be about economics. We call this term frequency
+(tf ).
+In contrast, if a word appears in many documents, it is likely less important to any
+individual document. For example, if every document in some text data contains the
+
+At the end, we use with torch.no_grad() to evaluate the network. This says that we
+should not compute gradients for any tensor operations conducted in this section of
+code. Since we use gradients only during the model training process, we don’t want
+to store new gradients for operations that occur outside of it (such as prediction or
+
+off to the side, pretending that we have never seen it before. Next we train our model
+188
+Chapter 11: Model Evaluation using our training set, using the features and target vector to teach the model how
+to make the best prediction. Finally, we simulate having never-before-seen external
+data by evaluating how our model performs on our test set. However, the validation
+
+id first
+last
+id first
+last
+Alex
+Anderson
+Billy
+Bonder
+Amy
+Ackerman 5
+Brian Black
+Allen
+Ali
+Bran
+Balwner
+Discussion
+Concatenating is not a word you hear much outside of computer science and pro‐
+gramming, so if you have not heard it before, do not worry. The informal definition
+of concatenate is to glue two objects together. In the solution we glued together two
+
+frameworks.
+Now, in 2023, there is a need for the same sort of hands-on content that serves the
+needs of both ML and DL practitioners with the latest Python libraries. This book
+intends to build on the existing (and fantastic) work done by the author of the first
+edition by:
+• Updating existing examples to use the latest Python versions and frameworks"
+Why is torch.no_grad() used when evaluating a network?,"Torch.no_grad() is used when evaluating a network to prevent the computation of gradients for tensor operations, as gradients are only needed during the model training process and not during prediction or evaluation.","important to that document. For example, if the word economy appears frequently, it
+is evidence that the document might be about economics. We call this term frequency
+(tf ).
+In contrast, if a word appears in many documents, it is likely less important to any
+individual document. For example, if every document in some text data contains the
+
+At the end, we use with torch.no_grad() to evaluate the network. This says that we
+should not compute gradients for any tensor operations conducted in this section of
+code. Since we use gradients only during the model training process, we don’t want
+to store new gradients for operations that occur outside of it (such as prediction or
+
+off to the side, pretending that we have never seen it before. Next we train our model
+188
+Chapter 11: Model Evaluation using our training set, using the features and target vector to teach the model how
+to make the best prediction. Finally, we simulate having never-before-seen external
+data by evaluating how our model performs on our test set. However, the validation
+
+id first
+last
+id first
+last
+Alex
+Anderson
+Billy
+Bonder
+Amy
+Ackerman 5
+Brian Black
+Allen
+Ali
+Bran
+Balwner
+Discussion
+Concatenating is not a word you hear much outside of computer science and pro‐
+gramming, so if you have not heard it before, do not worry. The informal definition
+of concatenate is to glue two objects together. In the solution we glued together two
+
+frameworks.
+Now, in 2023, there is a need for the same sort of hands-on content that serves the
+needs of both ML and DL practitioners with the latest Python libraries. This book
+intends to build on the existing (and fantastic) work done by the author of the first
+edition by:
+• Updating existing examples to use the latest Python versions and frameworks"

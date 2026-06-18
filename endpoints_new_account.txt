@@ -1,0 +1,24 @@
+=============================================
+UniAct RAG System — All Individual Endpoints
+New Modal Account: instamostafa1
+=============================================
+
+1. Embedding API (Qwen Embedding Model)
+https://instamostafa1--rag-embedding-api-embeddingapi-embed.modal.run
+
+2. MCQ Generation API (Dedicated MCQ Model)
+https://instamostafa1--rag-mcq-api-mcqapi-generate.modal.run
+
+3. Summarization API (Dedicated Summarization Model)
+https://instamostafa1--rag-summarization-api-summarizationapi-generate.modal.run
+
+4. General Generation API (Qwen Instruct — Chat & Answers)
+https://instamostafa1--rag-generation-api-v2-generationapi-generate.modal.run
+
+5. FastAPI Backend System (Full RAG Backend — connects to Qdrant + Postgres)
+https://instamostafa1--uniact-rag-backend-fastapi-app.modal.run
+
+=============================================
+All .env API URLs have been updated automatically.
+=============================================
+
