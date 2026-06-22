@@ -796,6 +796,70 @@ input[type=range]::-webkit-slider-runnable-track {
   100% { opacity: 0; }
 }
 
+/* Blinking Cursor for Streaming */
+.blinking-cursor {
+  font-weight: bold;
+  animation: 1s blink step-end infinite;
+  margin-left: 2px;
+  color: var(--primary);
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Markdown Content Styling */
+.markdown-body {
+  line-height: 1.6;
+}
+
+.markdown-body p {
+  margin-bottom: 12px;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.markdown-body h1 { font-size: 1.5em; }
+.markdown-body h2 { font-size: 1.3em; }
+.markdown-body h3 { font-size: 1.1em; }
+
+.markdown-body ul, .markdown-body ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.markdown-body li {
+  margin-bottom: 4px;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body code {
+  background-color: var(--bg2);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: var(--f-mono);
+  font-size: 0.9em;
+}
+
+.markdown-body pre code {
+  display: block;
+  padding: 12px;
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+
 /* Markdown prose inside components (if any) */
 .prose {
   line-height: 1.6;

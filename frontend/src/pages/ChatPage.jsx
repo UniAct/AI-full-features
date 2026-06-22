@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { api } from '../api';
 import { useApp } from '../AppContext';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function ChatPage() {
   const { projectId, chapters } = useApp();
@@ -164,8 +166,12 @@ export default function ChatPage() {
                     </div>
                   )}
                   {history.map((m, i) => (
-                    <div key={i} className={`chat-bubble ${m.role}`}>
-                      {m.content}
+                    <div key={i} className={`chat-bubble ${m.role} ${m.role === 'assistant' ? 'markdown-body' : ''}`}>
+                      {m.role === 'assistant' ? (
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
+                      ) : (
+                        m.content
+                      )}
                       {loading && i === history.length - 1 && <span className="blinking-cursor">▌</span>}
                     </div>
                   ))}

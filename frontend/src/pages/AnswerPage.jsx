@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { api } from '../api';
 import { useApp } from '../AppContext';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function AnswerPage() {
   const { projectId, triggerStamp, chapters } = useApp();
@@ -88,8 +90,8 @@ export default function AnswerPage() {
           <>
             <div className="section-label">Answer</div>
             <div className="card" style={{ borderLeft: '3px solid var(--archive)' }}>
-              <div className="result-box" style={{ border: 'none', padding: 0, background: 'transparent' }}>
-                {answer}
+              <div className="result-box markdown-body" style={{ border: 'none', padding: 0, background: 'transparent' }}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{answer}</ReactMarkdown>
                 {loading && <span className="blinking-cursor">▌</span>}
               </div>
             </div>

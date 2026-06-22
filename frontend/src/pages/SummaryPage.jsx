@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { api } from '../api';
 import { useApp } from '../AppContext';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function SummaryPage() {
   const { projectId, triggerStamp, chapters } = useApp();
@@ -81,8 +83,8 @@ export default function SummaryPage() {
           <>
             <div className="section-label">Summary</div>
             <div className="card" style={{ borderLeft: '3px solid var(--archive)' }}>
-              <div className="result-box" style={{ border: 'none', padding: 0, background: 'transparent' }}>
-                {summary}
+              <div className="result-box markdown-body" style={{ border: 'none', padding: 0, background: 'transparent' }}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{summary}</ReactMarkdown>
                 {loading && <span className="blinking-cursor">▌</span>}
               </div>
             </div>
