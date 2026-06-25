@@ -50,11 +50,14 @@
 
 The system is built on a provider-agnostic architecture — it supports both **Qdrant** and **PGVector** as the vector store, and **OpenAI** or **Cohere** as the LLM/embedding provider, configurable via environment variables.
 
-### ✨ Recent Upgrades (v2 Features)
-- **Isolated Study Areas**: Fully isolated Qdrant vector namespaces per document. This allows users to create individualized study spaces and notes strictly scoped to specific documents.
-- **AI Quick Ask (Real-Time Streaming)**: A built-in LLM chat assistant powered by OpenAI Server-Sent Events (SSE) that provides zero-latency, real-time token streaming for immediate answers.
-- **Modal NetworkFileSystem**: Migrated from standard volumes to highly concurrent POSIX `NetworkFileSystem` on Modal Cloud, resolving connection dropping/fetch failures and providing flawless multi-container read/write concurrency.
-- **Interactive Presentation Engine**: The project includes a dedicated, standalone Vite + React application (`uniact-presentation`) featuring a completely customized 3D particle background (Three.js) and GSAP scroll animations to showcase the system's architecture in a world-class, key-note style experience.
+### 🚀 Core Application Features
+- **Isolated Study Areas**: Create individualized workspaces (Qdrant namespaces) scoped to specific documents. Upload a file, and instantly get an isolated workspace where you can take notes and chat exclusively with that document.
+- **Dynamic Mind Map Generator**: Automatically extracts key concepts, relationships, and hierarchical data from uploaded documents and visualizes them interactively using React Flow.
+- **Automated Exam Generator**: Instantly generate structured, graded assessments from your documents. Generates both **Multiple Choice Questions (MCQs)** and **Written Responses** based on varying difficulty levels to test comprehension.
+- **Intelligent Summarization**: Context-aware NLP summarization that condenses massive documents into digestible bullet points and key takeaways using the LLM.
+- **Global & Scoped Chat (AI Quick Ask)**: A built-in LLM chat assistant powered by OpenAI Server-Sent Events (SSE). It provides zero-latency, real-time token streaming for immediate answers, supporting both global project-wide queries and document-scoped queries.
+- **Modal NetworkFileSystem Architecture**: Highly concurrent, scalable cloud storage backed by POSIX `NetworkFileSystem` on Modal Cloud, ensuring flawless read/write concurrency and eliminating fetch failures under heavy load.
+- **Interactive Technical Presentation**: A dedicated, standalone Vite + React application (`uniact-presentation`) featuring a completely customized 3D particle background (Three.js) and GSAP scroll animations to showcase the system's architecture in a world-class, keynote-style experience.
 ---
 
 ## 🏛️ Full Architecture Diagram
