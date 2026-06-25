@@ -50,6 +50,11 @@
 
 The system is built on a provider-agnostic architecture — it supports both **Qdrant** and **PGVector** as the vector store, and **OpenAI** or **Cohere** as the LLM/embedding provider, configurable via environment variables.
 
+### ✨ Recent Upgrades (v2 Features)
+- **Isolated Study Areas**: Fully isolated Qdrant vector namespaces per document. This allows users to create individualized study spaces and notes strictly scoped to specific documents.
+- **AI Quick Ask (Real-Time Streaming)**: A built-in LLM chat assistant powered by OpenAI Server-Sent Events (SSE) that provides zero-latency, real-time token streaming for immediate answers.
+- **Modal NetworkFileSystem**: Migrated from standard volumes to highly concurrent POSIX `NetworkFileSystem` on Modal Cloud, resolving connection dropping/fetch failures and providing flawless multi-container read/write concurrency.
+- **Interactive Presentation Engine**: The project includes a dedicated, standalone Vite + React application (`uniact-presentation`) featuring a completely customized 3D particle background (Three.js) and GSAP scroll animations to showcase the system's architecture in a world-class, key-note style experience.
 ---
 
 ## 🏛️ Full Architecture Diagram
