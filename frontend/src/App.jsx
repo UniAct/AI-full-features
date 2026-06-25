@@ -8,6 +8,7 @@ import ChatPage      from './pages/ChatPage';
 import ExamPage      from './pages/ExamPage';
 import SummaryPage   from './pages/SummaryPage';
 import MindMapPage   from './pages/MindMapPage';
+import StudyAreaPage from './pages/StudyAreaPage';
 
 const PAGES = {
   docs:    DocumentsPage,
@@ -17,6 +18,7 @@ const PAGES = {
   exam:    ExamPage,
   summary: SummaryPage,
   mindmap: MindMapPage,
+  study:   StudyAreaPage,
 };
 
 function Shell() {

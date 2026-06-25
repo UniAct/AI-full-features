@@ -100,4 +100,14 @@ export const api = {
   // FIX: chat route is POST /sessions/{sessionId}/chat — only sessionId in path
   chat:          (sessionId, body) => req('POST', `/sessions/${sessionId}/chat`, body),
   streamChat:    (sessionId, body, onToken) => streamReq('POST', `/sessions/${sessionId}/chat/stream`, body, onToken),
+
+  // ─── Study Area Routes ──────────────────────────────────────────────────
+  uploadStudyFile: (projectId, file) => {
+    const fd = new FormData();
+    fd.append('file', file);
+    return req('POST', `/study/upload/${projectId}`, fd, true);
+  },
+  listStudyFiles:  (projectId) => req('GET', `/study/files/${projectId}`),
+  getStudyData:    (projectId, fileId) => req('GET', `/study/data/${projectId}/${fileId}`),
+  saveStudyData:   (projectId, fileId, body) => req('POST', `/study/data/${projectId}/${fileId}`, body),
 };

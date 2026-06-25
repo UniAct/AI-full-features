@@ -3,7 +3,7 @@ Data routes module for handling file uploads and document processing.
 """
 
 from fastapi import APIRouter, Depends, UploadFile, status, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from helpers.config import get_settings, Settings
 from controllers import (
     DataController,
@@ -126,6 +126,22 @@ async def upload_data(
             "signal": ResponseSignal.FILE_UPLOAD_SUCCESS.value,
             "file_id": str(getattr(asset_record, "asset_id", "")),
         }
+    )
+
+
+@data_router.get("/serve/{project_id}/{filename}")
+async def serve_project_file(request: Request, project_id: str, filename: str):
+    """Serve a raw uploaded file (e.g. PDF) for the Study Area viewer."""
+    project_path = ProjectController().get_project_path(project_id=project_id)
+    file_path = os.path.join(project_path, filename)
+    if not os.path.exists(file_path):
+        return JSONResponse(status_code=404, content={"error": "File not found."})
+    media_type = "application/pdf" if filename.lower().endswith(".pdf") else "application/octet-stream"
+    return FileResponse(
+        path=file_path,
+        media_type=media_type,
+        filename=filename,
+        headers={"Content-Disposition": "inline"},
     )
 
 

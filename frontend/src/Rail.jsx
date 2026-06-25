@@ -1,5 +1,5 @@
 import { useApp } from './AppContext';
-import { FolderOpen, Search, MessageSquare, MessagesSquare, GraduationCap, FileText, Bot, Network } from 'lucide-react';
+import { FolderOpen, Search, MessageSquare, MessagesSquare, GraduationCap, FileText, Bot, Network, BookOpen } from 'lucide-react';
 
 const DRAWERS = [
   { id: 'docs',    icon: FolderOpen,     label: 'Documents' },
@@ -9,6 +9,7 @@ const DRAWERS = [
   { id: 'exam',    icon: GraduationCap,  label: 'Exam' },
   { id: 'summary', icon: FileText,       label: 'Summarize' },
   { id: 'mindmap', icon: Network,        label: 'Mind Map' },
+  { id: 'study',   icon: BookOpen,        label: 'Study Area' },
 ];
 
 export default function Rail({ active, onSelect }) {

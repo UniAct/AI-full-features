@@ -7,7 +7,7 @@ LLM providers, and includes project routes.
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware  # <-- تمت إضافة الاستيراد هنا
-from routes import base, data, nlp, session
+from routes import base, data, nlp, session, study
 from helpers.config import get_settings
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
@@ -110,3 +110,4 @@ app.include_router(base.base_router)
 app.include_router(data.data_router)
 app.include_router(nlp.nlp_router)
 app.include_router(session.session_router)
+app.include_router(study.study_router)
